@@ -1,0 +1,37 @@
+{
+  "description": {
+    "en": [
+      ""
+    ],
+    "de": [
+      ""
+    ]
+  },
+  "presentations": {
+    "murderer.js": {
+      "title": "murderer.js",
+      "short": {"en": "...", "de": "...de"},
+      "details": {"en": "...", "de": "...de"},
+      "language": ["de", "en"],
+      "duration": 50,
+      "author": "Ole Reglitzki (https://github.com/frissdiegurke)"
+    },
+    "onlinewahlen": {
+      "title": "Onlinewahlen",
+      "short": {"de": "..."},
+      "details": {"de": "..."},
+      "language": ["de"],
+      "duration": 50,
+      "author": "GI Mensch"
+    }
+  },
+  "schedule": [
+    {
+      "date": "2016/05/20",
+      "content": [
+        {"time": "13:00", "presentation": "murderer.js"},
+        {"time": "14:00", "presentation": "onlinewahlen"}
+      ]
+    }
+  ]
+}
