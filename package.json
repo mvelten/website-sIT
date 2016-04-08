@@ -1,6 +1,6 @@
 {
   "name": "sIT",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -10,7 +10,9 @@
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "express-handlebars": "^3.0.0",
     "hbs": "~3.1.0",
+    "i18n": "^0.8.1",
     "less-middleware": "1.0.x",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
