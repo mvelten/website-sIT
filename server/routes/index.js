@@ -22,6 +22,6 @@ function getIndexData() {
   return event
       .readIndex()
       .then(function (index) {
-        return {events: index};
+        return {events: index, title: "sIT"};
       });
 }
