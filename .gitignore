@@ -1,5 +1,4 @@
 /node_modules
 .idea
-*.iml
 
-/public/stylesheets/*.css
+/frontend/public/stylesheets/*.css

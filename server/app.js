@@ -14,34 +14,40 @@ var current = require('./routes/current');
 
 var app = express();
 
+const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
+const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
+
 i18n.configure({
   locales: ["en", "de"],
   defaultLocale: "de",
   queryParameter: "lang",
-  directory: __dirname + '/locales'
+  directory: FRONTEND_PATH + '/locales'
 });
 
 // view engine setup
 
 var hbs = ehbs.create({
   defaultLayout: "main",
+  layoutsDir: path.join(VIEWS_PATH, "layouts"),
+  partialsDir: path.join(VIEWS_PATH, "partials"),
   helpers: {
     i18n: function () { return this.__.apply(this, arguments); }
   }
 });
 
 app.engine("handlebars", hbs.engine);
+app.set("views", VIEWS_PATH);
 app.set('view engine', 'handlebars');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(FRONTEND_PATH, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(i18n.init);
-app.use(require('less-middleware')(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('less-middleware')(path.join(FRONTEND_PATH, 'public')));
+app.use(express.static(path.join(FRONTEND_PATH, 'public')));
 
 app.use('/', routes);
 app.use('/current', current);
