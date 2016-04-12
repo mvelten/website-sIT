@@ -1,8 +1,8 @@
 "use strict";
 
 let express = require("express");
-let Promise = require("bluebird");
 
+let event = require("../services/event");
 let Router = require("../services/Router");
 
 let router = new Router();
@@ -18,4 +18,10 @@ router.get("/", "index", getIndexData);
 
 /*==================================================== Functions  ====================================================*/
 
-function getIndexData() { return Promise.resolve({title: "Express"}); }
+function getIndexData() {
+  return event
+      .readIndex()
+      .then(function (index) {
+        return {events: index};
+      });
+}

@@ -13,6 +13,7 @@ var bodyParser = require("body-parser");
 
 var app = express();
 
+const DEBUG = !!process.env.DEBUG_SIT;
 const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
 const ROUTES = {
@@ -58,35 +59,37 @@ _.each(ROUTES, function (value, route) {
   app.use(route, value.router);
 });
 
-// catch 404 and forward to error handler
-app.use(function (req, res) {
-  debugError("Route not found: %s", req.path);
-  res.status(404).send("Not Found");
-});
-
 // error handlers
 
-// development error handler
-// will print stacktrace
-if (app.get("env") === "development") {
-  app.use(function (err, req, res) {
-    res.status(err.status || 500);
-    res.render("error", {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res) {
-  res.status(err.status || 500);
-  res.render("error", {
-    message: err.message,
-    error: {}
-  });
+app.use(function (req, res, next) {
+  let err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
+if (DEBUG) {
+  // development error handler
+  app.use(function (err, req, res, next) {
+    debugError(err);
+    err = {status: err.status || 500, message: err.message, stack: err.stack};
+    if (req.path.startsWith("/api/")) {
+      res.status(err.status).setHeader("Content-Type", "application/json;charset=utf-8");
+      res.send(JSON.stringify({error: err, path: req.path}, null, 2));
+    } else {
+      res.status(err.status).render("error", {error: err, path: req.path});
+    }
+  });
+} else {
+  // production error handler
+  app.use(function (err, req, res, next) {
+    err = {status: err.status || 500, message: err.message};
+    if (req.path.startsWith("/api/")) {
+      res.status(err.status).setHeader("Content-Type", "application/json;charset=utf-8");
+      res.send({error: err, path: req.path});
+    } else {
+      res.status(err.status).render("error", {error: err, path: req.path});
+    }
+  });
+}
 
 module.exports = app;
