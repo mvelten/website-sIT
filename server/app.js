@@ -51,13 +51,30 @@ let hbs = ehbs.create({
     localeURL: function (locale, data) { return data.data.root.path + "?lang=" + locale; },
     url: function () {
       let list = __SLICE.call(arguments);
-      let data = list.pop();
-      return "/" + __SLICE.call(list).join("/") + "?lang=" + data.data.root.locale;
+      let root = list.pop().data.root;
+      return "/" + __SLICE.call(list).join("/") + "?lang=" + root.locale;
+    },
+    breadcrumb: function (data) {
+      let root = data.data.root;
+      let splitPath = root.path === "/" ? [""] : root.path.split("/"), _last = splitPath.length - 1;
+      let html = "";
+      _.reduce(splitPath, function (result, value, idx) {
+        let content = root.__.call(root, "breadcrumb." + (value || "home"));
+        if (content.startsWith("breadcrumb.")) { content = value || "Home"; }
+        result += "/" + value;
+        if (idx === _last) {
+          html += "<li class=\"active\">" + content + "</li>";
+        } else {
+          html += "<li><a href=\"" + result + "?lang=" + root.locale + "\">" + content + "</a></li>";
+        }
+        return result;
+      }, "");
+      return html;
     },
     i18n: function () {
       let list = __SLICE.call(arguments);
-      let data = list.pop();
-      return data.data.root.__.apply(this, list);
+      let root = list.pop().data.root;
+      return root.__.apply(root, list);
     }
   }
 });
@@ -77,7 +94,12 @@ app.use(function (req, res, next) {
   res.locals.path = req.path;
   next();
 });
-app.use(require("less-middleware")(path.join(FRONTEND_PATH, "public")));
+app.use(require("less-middleware")(path.join(FRONTEND_PATH, "public"), {
+  once: true,
+  parser: {
+    paths: [path.join(FRONTEND_PATH, "public", "stylesheets"), path.join(__dirname, "..", "node_modules")]
+  }
+}));
 app.use(express.static(path.join(FRONTEND_PATH, "public")));
 
 _.each(ROUTES, function (value, route) {

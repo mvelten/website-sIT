@@ -1,3 +1,6 @@
 {
-  "title": "sIT DE"
+  "title": "sIT DE",
+  "breadcrumb.home": "&Uuml;bersicht",
+  "breadcrumb.archive": "Archiv",
+  "breadcrumb.current": "Aktuell"
 }
