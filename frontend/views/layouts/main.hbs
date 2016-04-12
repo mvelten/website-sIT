@@ -5,6 +5,10 @@
   <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 <body>
+{{#each locales}}
+  <a href="{{localeURL locale}}" class="{{#if isActive}}active{{/if}}">{{locale}}</a>
+{{/each}}
+
 {{{body}}}
 </body>
 </html>

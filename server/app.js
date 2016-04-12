@@ -14,9 +14,12 @@ let bodyParser = require("body-parser");
 
 let app = express();
 
+const __SLICE = Array.prototype.slice;
 const DEBUG = !!process.env.DEBUG_SIT;
 const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
+const LOCALES = ["en", "de"];
+const DEFAULT_LOCALE = "de";
 const ROUTES = {
   "/": require("./routes/index"),
   "/current": require("./routes/current"),
@@ -31,8 +34,8 @@ if (DEBUG) {
 }
 
 i18n.configure({
-  locales: ["en", "de"],
-  defaultLocale: "de",
+  locales: LOCALES,
+  defaultLocale: DEFAULT_LOCALE,
   queryParameter: "lang",
   directory: FRONTEND_PATH + "/locales"
 });
@@ -45,7 +48,17 @@ let hbs = ehbs.create({
   partialsDir: path.join(VIEWS_PATH, "partials"),
   extname: ".hbs",
   helpers: {
-    i18n: function () { return this.__.apply(this, arguments); }
+    localeURL: function (locale, data) { return data.data.root.path + "?lang=" + locale; },
+    url: function () {
+      let list = __SLICE.call(arguments);
+      let data = list.pop();
+      return "/" + __SLICE.call(list).join("/") + "?lang=" + data.data.root.locale;
+    },
+    i18n: function () {
+      let list = __SLICE.call(arguments);
+      let data = list.pop();
+      return data.data.root.__.apply(this, list);
+    }
   }
 });
 
@@ -59,6 +72,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(i18n.init);
+app.use(function (req, res, next) {
+  res.locals.locales = _.map(LOCALES, function (locale) { return {locale: locale, isActive: locale === req.locale}; });
+  res.locals.path = req.path;
+  next();
+});
 app.use(require("less-middleware")(path.join(FRONTEND_PATH, "public")));
 app.use(express.static(path.join(FRONTEND_PATH, "public")));
 
