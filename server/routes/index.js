@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+"use strict";
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
-});
+let express = require("express");
+let Promise = require("bluebird");
 
-module.exports = router;
+let Router = require("../services/Router");
+
+let router = new Router();
+
+/*===================================================== Exports  =====================================================*/
+
+exports.router = router.router;
+exports.apiRouter = router.apiRouter;
+
+/*------------------------------------------------------ Routes ------------------------------------------------------*/
+
+router.get("/", "index", getIndexData);
+
+/*==================================================== Functions  ====================================================*/
+
+function getIndexData() { return Promise.resolve({title: "Express"}); }
