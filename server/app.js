@@ -1,25 +1,34 @@
 "use strict";
 
-var _ = require("lodash");
-var express = require("express");
-var ehbs = require("express-handlebars");
-var i18n = require("i18n");
-var path = require("path");
-var debugError = require("debug")("sIT:app:error");
-var favicon = require("serve-favicon");
-var logger = require("morgan");
-var cookieParser = require("cookie-parser");
-var bodyParser = require("body-parser");
+let _ = require("lodash");
+let Promise = require("bluebird");
+let express = require("express");
+let ehbs = require("express-handlebars");
+let i18n = require("i18n");
+let path = require("path");
+let debugError = require("debug")("sIT:app:error");
+let favicon = require("serve-favicon");
+let logger = require("morgan");
+let cookieParser = require("cookie-parser");
+let bodyParser = require("body-parser");
 
-var app = express();
+let app = express();
 
 const DEBUG = !!process.env.DEBUG_SIT;
 const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
 const ROUTES = {
   "/": require("./routes/index"),
-  "/current": require("./routes/current")
+  "/current": require("./routes/current"),
+  "/archive": require("./routes/archive")
 };
+
+if (DEBUG) {
+  Promise.config({
+    warnings: true,
+    longStackTraces: true
+  });
+}
 
 i18n.configure({
   locales: ["en", "de"],
@@ -30,7 +39,7 @@ i18n.configure({
 
 // view engine setup
 
-var hbs = ehbs.create({
+let hbs = ehbs.create({
   defaultLayout: "main",
   layoutsDir: path.join(VIEWS_PATH, "layouts"),
   partialsDir: path.join(VIEWS_PATH, "partials"),
@@ -62,7 +71,7 @@ _.each(ROUTES, function (value, route) {
 // error handlers
 
 app.use(function (req, res, next) {
-  let err = new Error('Not Found');
+  let err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
