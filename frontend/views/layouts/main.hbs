@@ -15,7 +15,7 @@
   {{/each}}
 </head>
 
-<body>
+<body data-page="{{page}}">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     {{> header}}
@@ -27,7 +27,9 @@
     {{{breadcrumb}}}
   </ol>
 
-  {{{body}}}
+  <div id="content">
+    {{{body}}}
+  </div>
 
   <footer class="footer">
     <div id="footer-content">

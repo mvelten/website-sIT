@@ -79,6 +79,7 @@ app.use(function (req, res, next) {
     return {locale: locale, isActive: locale === req.locale, language: LANGUAGES[locale]};
   });
   res.locals.path = req.path;
+  res.locals.page = req.path.substring(1).replace(/\//g, "-") || "home";
   next();
 });
 app.use(require("less-middleware")(path.join(FRONTEND_PATH, "public"), {
