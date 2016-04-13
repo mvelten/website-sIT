@@ -14,7 +14,6 @@ let bodyParser = require("body-parser");
 
 let app = express();
 
-const __SLICE = Array.prototype.slice;
 const DEBUG = !!process.env.DEBUG_SIT;
 const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
@@ -48,34 +47,10 @@ let hbs = ehbs.create({
   partialsDir: path.join(VIEWS_PATH, "partials"),
   extname: ".hbs",
   helpers: {
-    localeURL: function (locale, data) { return data.data.root.path + "?lang=" + locale; },
-    url: function () {
-      let list = __SLICE.call(arguments);
-      let root = list.pop().data.root;
-      return "/" + __SLICE.call(list).join("/") + "?lang=" + root.locale;
-    },
-    breadcrumb: function (data) {
-      let root = data.data.root;
-      let splitPath = root.path === "/" ? [""] : root.path.split("/"), _last = splitPath.length - 1;
-      let html = "";
-      _.reduce(splitPath, function (result, value, idx) {
-        let content = root.__.call(root, "breadcrumb." + (value || "home"));
-        if (content.startsWith("breadcrumb.")) { content = value || "Home"; }
-        result += "/" + value;
-        if (idx === _last) {
-          html += "<li class=\"active\">" + content + "</li>";
-        } else {
-          html += "<li><a href=\"" + result + "?lang=" + root.locale + "\">" + content + "</a></li>";
-        }
-        return result;
-      }, "");
-      return html;
-    },
-    i18n: function () {
-      let list = __SLICE.call(arguments);
-      let root = list.pop().data.root;
-      return root.__.apply(root, list);
-    }
+    localeURL: require("./helpers/localeURL"),
+    url: require("./helpers/url"),
+    breadcrumb: require("./helpers/breadcrumb"),
+    i18n: require("./helpers/i18n")
   }
 });
 
