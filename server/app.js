@@ -1,6 +1,7 @@
 "use strict";
 
 let _ = require("lodash");
+let fs = require("fs");
 let Promise = require("bluebird");
 let express = require("express");
 let ehbs = require("express-handlebars");
@@ -19,11 +20,20 @@ const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
 const LOCALES = ["en", "de"];
 const DEFAULT_LOCALE = "de";
+const SCRIPTS = ["jquery/dist/jquery.min.js", "bootstrap/dist/js/bootstrap.min.js"];
 const ROUTES = {
   "/": require("./routes/index"),
   "/current": require("./routes/current"),
   "/archive": require("./routes/archive")
 };
+
+let scripts = _.map(SCRIPTS, function (script) {
+  let basename = path.basename(script);
+  let source = path.join(FRONTEND_PATH, "public", "scripts", basename);
+  if (fs.existsSync(source)) { fs.unlinkSync(source); }
+  fs.symlinkSync(require.resolve(script), source);
+  return basename;
+});
 
 if (DEBUG) {
   Promise.config({
@@ -53,6 +63,8 @@ let hbs = ehbs.create({
     i18n: require("./helpers/i18n")
   }
 });
+
+app.locals.SCRIPTS = scripts;
 
 app.engine("hbs", hbs.engine);
 app.set("views", path.join(VIEWS_PATH, "content"));

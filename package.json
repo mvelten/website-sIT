@@ -2,6 +2,7 @@
   "name": "sIT",
   "version": "0.0.1",
   "private": true,
+  "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://frissdiegurke.com)",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -15,6 +16,7 @@
     "express-handlebars": "^3.0.0",
     "hbs": "~3.1.0",
     "i18n": "^0.8.1",
+    "jquery": "^2.2.3",
     "less-middleware": "1.0.x",
     "lodash": "^4.10.0",
     "morgan": "~1.6.1",

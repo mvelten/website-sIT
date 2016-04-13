@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>{{i18n 'title'}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css"/>
-</head>
-<body>
-{{#each locales}}
-  <a href="{{localeURL locale}}" class="{{#if isActive}}active{{/if}}">{{locale}}</a>
-{{/each}}
-<ol class="breadcrumb">
-  {{{breadcrumb}}}
-</ol>
+<html lang="{{locale}}">
 
-{{{body}}}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{i18n 'title'}}</title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+
+  {{#each SCRIPTS}}
+    <script type="text/javascript" src="/scripts/{{this}}"></script>
+  {{/each}}
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    {{> header}}
+  </div>
+</nav>
+<div class="container">
+<!--{{#each locales}}-->
+  <!--<a href="{{localeURL locale}}" class="{{#if isActive}}active{{/if}}">{{locale}}</a>-->
+    <!--{{/each}}-->
+  <ol class="breadcrumb">
+    {{{breadcrumb}}}
+  </ol>
+
+  {{{body}}}
+</div>
 </body>
+
 </html>
