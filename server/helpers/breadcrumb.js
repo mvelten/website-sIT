@@ -2,7 +2,13 @@
 
 let _ = require("lodash");
 
+let locales = require("../../frontend/locales/en.json");
+
+/*===================================================== Exports  =====================================================*/
+
 module.exports = createBreadcrumb;
+
+/*==================================================== Functions  ====================================================*/
 
 function createBreadcrumb(data) {
   let root = data.data.root;
@@ -10,8 +16,8 @@ function createBreadcrumb(data) {
   let splitPath = path.split("/"), _last = splitPath.length - 1;
   let html = "";
   _.reduce(splitPath, function (result, value, idx) {
-    let content = root.__.call(root, "breadcrumb." + (value || "home"));
-    if (content.startsWith("breadcrumb.")) { content = value || "Home"; }
+    let key = "breadcrumb." + (value || "home");
+    let content = locales.hasOwnProperty(key) ? root.__.call(root, key) : value;
     result += value;
     if (idx === _last) {
       html += "<li class=\"active\">" + content + "</li>";

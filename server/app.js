@@ -43,6 +43,7 @@ if (DEBUG) {
 }
 
 i18n.configure({
+  indent: "  ",
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
   queryParameter: "lang",
