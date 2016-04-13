@@ -2,5 +2,10 @@
 	"title": "sIT EN",
 	"breadcrumb.home": "Home",
 	"breadcrumb.archive": "Archive",
-	"breadcrumb.current": "Current"
+	"breadcrumb.current": "Current",
+	"breadcrumb.location": "Location",
+	"breadcrumb.imprint": "Imprint",
+	"breadcrumb.stylesheets": "breadcrumb.stylesheets",
+	"breadcrumb.style.css": "breadcrumb.style.css",
+	"imprint.location": "Location"
 }

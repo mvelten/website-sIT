@@ -22,7 +22,7 @@ const LOCALES = ["en", "de"];
 const DEFAULT_LOCALE = "de";
 const SCRIPTS = ["jquery/dist/jquery.min.js", "bootstrap/dist/js/bootstrap.min.js"];
 const ROUTES = {
-  "/": require("./routes/index"),
+  "/": [require("./routes/index"), require("./routes/legal")],
   "/current": require("./routes/current"),
   "/archive": require("./routes/archive")
 };
@@ -90,9 +90,17 @@ app.use(require("less-middleware")(path.join(FRONTEND_PATH, "public"), {
 app.use(express.static(path.join(FRONTEND_PATH, "public")));
 
 _.each(ROUTES, function (value, route) {
-  app.use("/api/v1" + route, value.apiRouter);
-  app.use("/api" + route, value.apiRouter);
-  app.use(route, value.router);
+  if (_.isArray(value)) {
+    _.each(value, function (value) {
+      app.use("/api/v1" + route, value.apiRouter);
+      app.use("/api" + route, value.apiRouter);
+      app.use(route, value.router);
+    })
+  } else {
+    app.use("/api/v1" + route, value.apiRouter);
+    app.use("/api" + route, value.apiRouter);
+    app.use(route, value.router);
+  }
 });
 
 // error handlers

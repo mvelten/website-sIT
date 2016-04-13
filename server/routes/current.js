@@ -1,7 +1,5 @@
 "use strict";
 
-let express = require("express");
-
 let event = require("../services/event");
 let Router = require("../services/Router");
 

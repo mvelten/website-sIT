@@ -7,4 +7,37 @@
 
 body {
   padding-top: @navbar-height + @line-height-computed;
+
+  .container > h1 {
+    margin-bottom: @padding-large-vertical * 2;
+    text-align: center;
+  }
 }
+
+#footer-content {
+  height: 100%;
+  text-align: center;
+  padding: 5px 10px;
+  border-top: 1px solid fade(@color-secondary, 30%);
+  background: fade(@color-primary, 10%);
+  margin: 20px -10px 0px -10px;
+  color: fadeout(@text-color, 20%);
+
+  .separator {
+    padding: 0 10px;
+  }
+}
+
+#imprint {
+  .row > label {
+    @media (min-width: @screen-sm-min) {
+      text-align: right;
+    }
+  }
+  .row > div {
+    margin-bottom: @padding-small-vertical;
+  }
+}
+
+@color-primary: #FF8000;
+@color-secondary: #163776;

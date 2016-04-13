@@ -1,6 +1,7 @@
 "use strict";
 
 let _ = require("lodash");
+let Promise = require("bluebird");
 let express = require("express");
 
 const DEBUG = !!process.env.DEBUG_SIT;
@@ -20,6 +21,7 @@ function Router(router, apiRouter) {
 
 _.each(["get", "post"], function (key) {
   Router.prototype[key] = function (route, view, dataGenerator, errorHandler) {
+    if (typeof dataGenerator !== "function") { dataGenerator = _.constant(Promise.resolve({})); }
     this.router[key](route, function (req, res, next) {
       dataGenerator(req, res).then(function (data) { res.render(view, data); }, next);
     });

@@ -2,5 +2,7 @@
   "title": "sIT DE",
   "breadcrumb.home": "&Uuml;bersicht",
   "breadcrumb.archive": "Archiv",
-  "breadcrumb.current": "Aktuell"
+  "breadcrumb.current": "Aktuell",
+  "breadcrumb.location": "Anfahrt",
+  "breadcrumb.imprint": "Impressum"
 }

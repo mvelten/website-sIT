@@ -1,8 +1,6 @@
 "use strict";
 
 let _ = require("lodash");
-let express = require("express");
-
 let event = require("../services/event");
 let Router = require("../services/Router");
 
