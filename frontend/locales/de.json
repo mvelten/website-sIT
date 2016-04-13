@@ -1,8 +1,8 @@
 {
-  "title": "sIT DE",
-  "breadcrumb.home": "&Uuml;bersicht",
-  "breadcrumb.archive": "Archiv",
-  "breadcrumb.current": "Aktuell",
-  "breadcrumb.location": "Anfahrt",
-  "breadcrumb.imprint": "Impressum"
+  "title": "Studentische Informatiktage G&ouml;ttingen",
+  "navigation.home": "&Uuml;bersicht",
+  "navigation.archive": "Archiv",
+  "navigation.upcoming": "Aktuell",
+  "navigation.location": "Anfahrt",
+  "navigation.imprint": "Impressum"
 }

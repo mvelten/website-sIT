@@ -12,11 +12,11 @@ module.exports = createBreadcrumb;
 
 function createBreadcrumb(data) {
   let root = data.data.root;
-  var path = root.path.endsWith("/") ? root.path.substring(0, root.path.length - 1) : root.path;
+  let path = root.path.endsWith("/") ? root.path.substring(0, root.path.length - 1) : root.path;
   let splitPath = path.split("/"), _last = splitPath.length - 1;
   let html = "";
   _.reduce(splitPath, function (result, value, idx) {
-    let key = "breadcrumb." + (value || "home");
+    let key = "navigation." + (value || "home");
     let content = locales.hasOwnProperty(key) ? root.__.call(root, key) : value;
     result += value;
     if (idx === _last) {

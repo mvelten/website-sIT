@@ -12,14 +12,16 @@ exports.apiRouter = router.apiRouter;
 
 /*------------------------------------------------------ Routes ------------------------------------------------------*/
 
-router.get("/", "year", getCurrentData);
+router.get("/", "year", getUpcomingData);
 
 /*==================================================== Functions  ====================================================*/
 
-function getCurrentData() {
+function getUpcomingData() {
   return event
       .readIndex()
       .then(function (index) {
-        return event.readOne(index.current).then(function (data) { return {data: data, year: index.current}; });
+        return event
+            .readOne(index.upcoming)
+            .then(function (data) { return {data: data, year: index.upcoming}; });
       });
 }

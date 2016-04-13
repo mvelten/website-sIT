@@ -23,7 +23,7 @@ const DEFAULT_LOCALE = "de";
 const SCRIPTS = ["jquery/dist/jquery.min.js", "bootstrap/dist/js/bootstrap.min.js"];
 const ROUTES = {
   "/": [require("./routes/index"), require("./routes/legal")],
-  "/current": require("./routes/current"),
+  "/upcoming": require("./routes/upcoming"),
   "/archive": require("./routes/archive")
 };
 
@@ -58,10 +58,11 @@ let hbs = ehbs.create({
   partialsDir: path.join(VIEWS_PATH, "partials"),
   extname: ".hbs",
   helpers: {
-    localeURL: require("./helpers/localeURL"),
-    url: require("./helpers/url"),
     breadcrumb: require("./helpers/breadcrumb"),
-    i18n: require("./helpers/i18n")
+    headerItems: require("./helpers/headerItems"),
+    i18n: require("./helpers/i18n"),
+    localeURL: require("./helpers/localeURL"),
+    url: require("./helpers/url")
   }
 });
 
