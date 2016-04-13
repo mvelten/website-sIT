@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="favicon.svg"
+   sodipodi:docname="logo.svg"
    inkscape:export-filename="/home/ole/workspace/sIT/assets/logo.png"
    inkscape:export-xdpi="23.200001"
    inkscape:export-ydpi="23.200001">
@@ -83,7 +83,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
