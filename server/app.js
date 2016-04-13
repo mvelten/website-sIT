@@ -15,25 +15,21 @@ let bodyParser = require("body-parser");
 
 let app = express();
 
+let scripts = require("./routes/scripts");
+
 const DEBUG = !!process.env.DEBUG_SIT;
 const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const VIEWS_PATH = path.join(FRONTEND_PATH, "views");
 const LOCALES = ["en", "de"];
+const LANGUAGES = {en: "English", de: "Deutsch"};
 const DEFAULT_LOCALE = "de";
-const SCRIPTS = ["jquery/dist/jquery.min.js", "bootstrap/dist/js/bootstrap.min.js"];
 const ROUTES = {
   "/": [require("./routes/index"), require("./routes/legal")],
   "/upcoming": require("./routes/upcoming"),
-  "/archive": require("./routes/archive")
+  "/archive": require("./routes/archive"),
+  "/fonts": require("./routes/fonts"),
+  "/scripts": scripts
 };
-
-let scripts = _.map(SCRIPTS, function (script) {
-  let basename = path.basename(script);
-  let source = path.join(FRONTEND_PATH, "public", "scripts", basename);
-  if (fs.existsSync(source)) { fs.unlinkSync(source); }
-  fs.symlinkSync(require.resolve(script), source);
-  return basename;
-});
 
 if (DEBUG) {
   Promise.config({
@@ -66,7 +62,7 @@ let hbs = ehbs.create({
   }
 });
 
-app.locals.SCRIPTS = scripts;
+app.locals.SCRIPTS = scripts.scripts;
 
 app.engine("hbs", hbs.engine);
 app.set("views", path.join(VIEWS_PATH, "content"));
@@ -79,7 +75,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(i18n.init);
 app.use(function (req, res, next) {
-  res.locals.locales = _.map(LOCALES, function (locale) { return {locale: locale, isActive: locale === req.locale}; });
+  res.locals.locales = _.map(LOCALES, function (locale) {
+    return {locale: locale, isActive: locale === req.locale, language: LANGUAGES[locale]};
+  });
   res.locals.path = req.path;
   next();
 });
@@ -94,13 +92,17 @@ app.use(express.static(path.join(FRONTEND_PATH, "public")));
 _.each(ROUTES, function (value, route) {
   if (_.isArray(value)) {
     _.each(value, function (value) {
-      app.use("/api/v1" + route, value.apiRouter);
-      app.use("/api" + route, value.apiRouter);
+      if (value.apiRouter) {
+        app.use("/api/v1" + route, value.apiRouter);
+        app.use("/api" + route, value.apiRouter);
+      }
       app.use(route, value.router);
     })
   } else {
-    app.use("/api/v1" + route, value.apiRouter);
-    app.use("/api" + route, value.apiRouter);
+    if (value.apiRouter) {
+      app.use("/api/v1" + route, value.apiRouter);
+      app.use("/api" + route, value.apiRouter);
+    }
     app.use(route, value.router);
   }
 });
