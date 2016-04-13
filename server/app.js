@@ -42,6 +42,7 @@ i18n.configure({
   indent: "  ",
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
+  objectNotation: true,
   queryParameter: "lang",
   directory: FRONTEND_PATH + "/locales"
 });

@@ -1,9 +1,11 @@
 {
   "title": "Studentische Informatiktage G&ouml;ttingen",
-  "navigation.home": "&Uuml;bersicht",
-  "navigation.archive": "Archiv",
-  "navigation.upcoming": "Aktuell",
-  "navigation.location": "Anfahrt",
-  "navigation.imprint": "Impressum",
-  "navigation.language": "Sprache"
+  "navigation": {
+    "home": "&Uuml;bersicht",
+    "archive": "Archiv",
+    "upcoming": "Aktuell",
+    "location": "Anfahrt",
+    "imprint": "Impressum",
+    "language": "Sprache"
+  }
 }

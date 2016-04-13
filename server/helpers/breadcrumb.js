@@ -16,8 +16,8 @@ function createBreadcrumb(data) {
   let splitPath = path.split("/"), _last = splitPath.length - 1;
   let html = "";
   _.reduce(splitPath, function (result, value, idx) {
-    let key = "navigation." + (value || "home");
-    let content = locales.hasOwnProperty(key) ? root.__.call(root, key) : value;
+    let key = value || "home";
+    let content = locales.navigation.hasOwnProperty(key) ? root.__.call(root, "navigation." + key) : value;
     result += value;
     if (idx === _last) {
       html += "<li class=\"active\">" + content + "</li>";
