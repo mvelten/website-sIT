@@ -15,6 +15,23 @@ body {
   }
 }
 
+#logo {
+  @size: 32px;
+  width: @navbar-height - 1px;
+  height: @navbar-height - 1px;
+  padding: (@navbar-height - 2px - @size) / 2;
+  margin-top: 1px - @navbar-padding-vertical;
+  background-color: mix(@body-bg, @color-one, 70%);
+  border-radius: 3px;
+  //noinspection CssRedundantUnit // This actually is not redundant but necessary.
+  transition: border-radius 1s 0s ease-in-out;
+
+  &:hover {
+    background-color: mix(@body-bg, @color-one, 83%);
+    border-radius: 8px;
+  }
+}
+
 #language-selector {
   > li {
     font-family: 'Source Code Pro', Consolas, monospace;
@@ -25,8 +42,8 @@ body {
   height: 100%;
   text-align: center;
   padding: 5px 10px;
-  border-top: 1px solid fade(@color-secondary, 30%);
-  background: fade(@color-primary, 10%);
+  border-top: 1px solid fade(@color-one, 30%);
+  background: fade(@color-two, 10%);
   margin: 20px -10px 0px -10px;
   color: fadeout(@text-color, 20%);
 
@@ -48,5 +65,7 @@ body {
 
 @fa-font-path: "/fonts";
 
-@color-primary: #FF8000;
-@color-secondary: #163776;
+@body-bg: mix(white, @color-one, 88%);
+
+@color-one: #163776;
+@color-two: #FF8000;
