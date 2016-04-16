@@ -22,7 +22,8 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de", "en"],
       "duration": 45,
-      "author": "Deriva"
+      "author": null,
+      "company": "Deriva"
     },
     "hosteurope": {
       "title": "Host Europe",
@@ -30,7 +31,8 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de", "en"],
       "duration": 45,
-      "author": "Host Europe"
+      "author": null,
+      "company": "Host Europe"
     },
     "aicon": {
       "title": "Aicon",
@@ -38,7 +40,8 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de", "en"],
       "duration": 30,
-      "author": "Aicon"
+      "author": null,
+      "company": "Aicon"
     },
     "murderer.js": {
       "title": "murderer.js",
@@ -54,7 +57,8 @@
       "details": {"de": "..."},
       "language": ["de", "en"],
       "duration": 30,
-      "author": "GI Mensch (Polyas: https://www.polyas.de/)"
+      "author": "Moritz Strube",
+      "company": "Polyas: (https://www.polyas.de/)"
     },
     "robin": {
       "title": "TBA",
@@ -86,7 +90,7 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de","en"],
       "duration": 50,
-      "author": "Sebastian"
+      "author": "Sebastian Groß"
     },
     "secret": {
       "title": "Secret presentation",
@@ -94,15 +98,14 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de","en"],
       "duration": 42,
-      "author": "Someone (Gustav, Asterix, ...)"
+      "author": null
     },
     "social": {
       "title": "Social Events",
       "short": {"en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"},
       "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
       "language": ["de","en"],
-      "duration": 300,
-      "author": "---"
+      "author": null
     },
     "joepardy": {
       "title": "Joepardy",
@@ -125,16 +128,8 @@
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."},
       "language": ["en"],
-      "duration": 300,
+      "duration": null,
       "author": "Bakhodir"
-    },
-    "openend": {
-      "title": "Open end",
-      "short": {"en": "...", "de": "...de"},
-      "details": {"en": "...", "de": "...de"},
-      "language": ["de","en"],
-      "duration": 50,
-      "author": "---"
     }
   },
   "schedule": [
@@ -147,21 +142,21 @@
         {"time": "17:00", "presentation": "hosteurope"},
         {"time": "18:00", "presentation": "aicon"},
         {"time": "19:00", "presentation": "joepardy"},
-        {"time": "> 19:42", "presentation": "socializing"}
+        {"time": "19:42", "presentation": "social"}
       ]
     },
     {
       "date": "2016/05/20",
       "content": [
         {"time": "13:00", "presentation": "murderer.js"},
-        {"time": "14:00", "presentation": "free"},
+        {"time": "14:00", "presentation": "secret"},
         {"time": "15:00", "presentation": "robin"},
         {"time": "16:00", "presentation": "matze"},
         {"time": "17:00", "presentation": "contest"},
         {"time": "18:00", "presentation": "raspiadc"},
         {"time": "19:00", "presentation": "secret"},
-        {"time": "19:50", "presentation": "joepardy"},
-        {"time": "> 20:30", "presentation": "social"}
+        {"time": "19:40", "presentation": "joepardy"},
+        {"time": "20:20", "presentation": "social"}
       ]
     },
     {
@@ -169,7 +164,7 @@
       "content": [
         {"time": "14:30", "presentation": "results"},
         {"time": "15:00", "presentation": "challenge"},
-        {"time": "> 20:00", "presentation": "openend"}
+        {"time": "20:00", "presentation": "social"}
       ]
     }
   ]
