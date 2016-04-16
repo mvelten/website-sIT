@@ -1,18 +1,23 @@
 "use strict";
 
-let event = require("../services/event");
-let Router = require("../services/Router");
+let express = require("express");
 
-let router = new Router();
+let event = require("../services/event");
+
+let router = express.Router(), apiRouter = express.Router();
 
 /*===================================================== Exports  =====================================================*/
 
-exports.router = router.router;
-exports.apiRouter = router.apiRouter;
+exports.router = router;
+exports.apiRouter = apiRouter;
 
 /*------------------------------------------------------ Routes ------------------------------------------------------*/
 
-router.get("/", "index", getIndexData);
+router.get("/", function (req, res) { res.render("home/" + req.locale, getIndexData()); });
+apiRouter.get("/", function (req, res) {
+  res.setHeader("Content-Type", "application/json;charset=utf-8");
+  res.send(getIndexData());
+});
 
 /*==================================================== Functions  ====================================================*/
 

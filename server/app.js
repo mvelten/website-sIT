@@ -24,7 +24,7 @@ const LOCALES = ["en", "de"];
 const LANGUAGES = {en: "English", de: "Deutsch"};
 const DEFAULT_LOCALE = "de";
 const ROUTES = {
-  "/": [require("./routes/index"), require("./routes/legal")],
+  "/": [require("./routes/home"), require("./routes/legal")],
   "/upcoming": require("./routes/upcoming"),
   "/archive": require("./routes/archive"),
   "/location": require("./routes/location"),

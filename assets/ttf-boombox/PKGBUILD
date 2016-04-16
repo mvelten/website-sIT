@@ -1,0 +1,19 @@
+# Maintainer: Ole Reglitzki <frissdiegurke@protonmail.com>
+pkgname=ttf-boombox
+pkgver=1.0
+pkgrel=1
+pkgdesc="Original (BoomBox) and improved (BoomBox 2) ttf fonts"
+arch=('any')
+license=('custom')
+depends=(fontconfig xorg-font-utils)
+source=("http://www.ffonts.net/BoomBox-2.font.zip")
+install=$pkgname.install
+md5sums=('0a03513b96f871f3fa0841b0413ad056')
+
+package() {
+  install -Dm644 Original\ version\ by\ Jonathan\ Paterson/BOOMBOX.TTF "$pkgdir"/usr/share/fonts/boombox/boombox.ttf
+  install -Dm644 Improved\ version\ by\ Aleksandar\ Djoba/boombox2.ttf "$pkgdir"/usr/share/fonts/boombox/boombox-2.ttf
+  install -Dm644 Original\ version\ by\ Jonathan\ Paterson/BOOMBOX.TXT "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm644 Improved\ version\ by\ Aleksandar\ Djoba/boombox2.txt "${pkgdir}/usr/share/licenses/${pkgname}/boombox2.txt"
+}
+

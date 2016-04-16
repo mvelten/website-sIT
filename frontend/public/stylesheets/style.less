@@ -27,6 +27,13 @@ body {
   }
 }
 
+#banner {
+  width: 800px;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
 #content {
   min-height: 200px;
   padding: 0 @padding-base-horizontal;
@@ -68,9 +75,11 @@ body {
   }
 }
 
-@fa-font-path: "/fonts";
+@fonts-path: "/fonts";
+@fa-font-path: @fonts-path;
 
 @body-bg: mix(white, @color-one, 88%);
+@hr-border: mix(@color-one, @body-bg, 30%);
 
 @color-one: #163776;
 @color-two: #FF8000;
