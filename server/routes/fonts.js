@@ -20,5 +20,5 @@ router.get("/:file", function (req, res, next) {
   var sourceFile = path.join(FA_BASE, req.params.file);
   fs
       .accessAsync(sourceFile, fs.R_OK)
-      .then(function () { res.sendFile(sourceFile); }, _.ary(next));
+      .then(function () { res.sendFile(sourceFile); }, _.ary(next, 0));
 });

@@ -24,6 +24,6 @@ _.each(SCRIPTS, function (script) {
   router.get("/" + basename, function (req, res, next) {
     fs
         .accessAsync(sourceFile, fs.R_OK)
-        .then(function () { res.sendFile(sourceFile); }, _.ary(next));
+        .then(function () { res.sendFile(sourceFile); }, next);
   });
 });
