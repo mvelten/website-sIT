@@ -13,10 +13,12 @@ exports.apiRouter = apiRouter;
 
 /*------------------------------------------------------ Routes ------------------------------------------------------*/
 
-router.get("/", function (req, res) { res.render("home/" + req.locale, getIndexData()); });
-apiRouter.get("/", function (req, res) {
+router.get("/", function (req, res, next) {
+  getIndexData().then(function (data) { res.render("home/" + req.locale, data); }, next);
+});
+apiRouter.get("/", function (req, res, next) {
   res.setHeader("Content-Type", "application/json;charset=utf-8");
-  res.send(getIndexData());
+  getIndexData().then(function (data) { res.send(data); }, next);
 });
 
 /*==================================================== Functions  ====================================================*/
@@ -24,7 +26,5 @@ apiRouter.get("/", function (req, res) {
 function getIndexData() {
   return event
       .readIndex()
-      .then(function (index) {
-        return {events: index, title: "sIT"};
-      });
+      .then(function (index) { return {events: index}; });
 }
