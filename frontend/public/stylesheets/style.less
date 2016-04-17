@@ -1,4 +1,6 @@
-@import "/bootstrap/less/bootstrap";
+@import "bootstrap";
+@import "timeline";
+@import "links";
 @import "/font-awesome/less/font-awesome";
 
 /*!
@@ -44,12 +46,6 @@ body {
   }
 }
 
-#language-selector {
-  > li {
-    font-family: 'Source Code Pro', Consolas, monospace;
-  }
-}
-
 #footer-content {
   height: 100%;
   text-align: center;
@@ -75,11 +71,38 @@ body {
   }
 }
 
+.text-mono {
+  font-family: 'Source Code Pro', Consolas, monospace;
+}
+
+#presentations .presentation-language {
+  &:after {
+    margin-left: 5px;
+    content: "/";
+  }
+  &:last-child:after {
+    margin-left: 0;
+    content: "";
+  }
+}
+
 @fonts-path: "/fonts";
 @fa-font-path: @fonts-path;
 
 @body-bg: mix(white, @color-one, 88%);
 @hr-border: mix(@color-one, @body-bg, 30%);
 
-@color-one: #163776;
+@link-external-color: @link-color;
+@link-external-hover-color: @link-hover-color;
+@link-external-icon: true;
+@link-external-icon-color: @link-external-color;
+@link-external-hover-icon-color: @link-external-hover-color;
+
+@color-one: @brand-primary;
 @color-two: #FF8000;
+
+@brand-primary: #163776;
+@brand-success: #73A839;
+@brand-info: #2FA4E7;
+@brand-warning: #DD5600;
+@brand-danger: #C71C22;

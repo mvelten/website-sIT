@@ -16,12 +16,13 @@ router.get("/", "year", getUpcomingData);
 
 /*==================================================== Functions  ====================================================*/
 
-function getUpcomingData() {
+function getUpcomingData(req) {
   return event
       .readIndex()
       .then(function (index) {
+        let year = index.upcoming;
         return event
-            .readOne(index.upcoming)
-            .then(function (data) { return {data: data, year: index.upcoming}; });
+            .readOne(year)
+            .then(function (data) { return {year: year, data: event.localizePresentation(data, req.locale)}; });
       });
 }

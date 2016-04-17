@@ -1,1 +1,53 @@
-{{year}}
+<h1>sIT {{year}}</h1>
+
+{{{data.description}}}
+
+<h2>{{{i18n 'year.presentations'}}}</h2>
+
+<ul id="presentations" class="timeline">
+  {{#each data.schedule}}
+    <li class="timeline-label">
+      <a role="button" data-toggle="collapse" data-parent="#presentations"
+         href="#presentations-{{moment date format="YYYY-MM-DD" input="YYYY/MM/DD"}}" aria-expanded="true"
+         aria-controls="presentations-{{moment date format="YYYY-MM-DD" input="YYYY/MM/DD"}}">
+        {{moment date format="dddd, L" input="YYYY/MM/DD"}}
+      </a>
+    </li>
+    <li id="presentations-{{moment date format="YYYY-MM-DD" input="YYYY/MM/DD"}}" class="timeline-items collapse in">
+      {{#each content}}
+        {{#withLookup ../../data.presentations presentation}}
+          <div class="timeline-item">
+            <div class="badge badge-{{#if color}}{{color}}{{else}}info{{/if}}">
+              <i class="fa fa-{{#if icon}}{{icon}}{{else}}comment{{/if}}"></i>
+            </div>
+            <div class="panel panel-default">
+              <h4 class="panel-heading">
+                {{title}}
+                <small class="text-muted text-mono pull-right">
+                  <i class="fa fa-fw fa-clock-o"></i> {{moment ../time format="LT" input="hh:mm"}}
+                  <i class="fa fa-fw fa-ellipsis-h"></i>
+                  {{#if duration}}
+                    {{momentAdd ../time duration format="LT" input="hh:mm" unit="minutes"}}
+                  {{/if}}
+                </small>
+              </h4>
+              <div class="panel-body">
+                {{{details}}}
+              </div>
+              {{#if author}}
+                <div class="panel-footer">
+                  {{>author}}
+                  <div class="pull-right">
+                    {{#each language}}
+                      <small class="text-mono presentation-language">{{this}}</small>
+                    {{/each}}
+                  </div>
+                </div>
+              {{/if}}
+            </div>
+          </div>
+        {{/withLookup}}
+      {{/each}}
+    </li>
+  {{/each}}
+</ul>

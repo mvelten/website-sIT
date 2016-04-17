@@ -41,6 +41,8 @@ function getYearData(req) {
           err.status = 404;
           throw err;
         }
-        return event.readOne(year).then(function (data) { return {year: year, data: data}; });
+        return event
+            .readOne(year)
+            .then(function (data) { return {year: year, data: event.localizePresentation(data, req.locale)}; });
       });
 }

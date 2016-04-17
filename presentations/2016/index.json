@@ -14,6 +14,8 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de", "en"],
       "duration": 15,
+      "icon": "commenting",
+      "color": "success",
       "author": "Fachgruppe Informatik"
     },
     "deriva": {
@@ -49,7 +51,7 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["de", "en"],
       "duration": 50,
-      "author": "Ole Reglitzki (https://github.com/frissdiegurke)"
+      "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://github.com/frissdiegurke)"
     },
     "onlinewahlen": {
       "title": "Onlinewahlen",
@@ -82,6 +84,8 @@
       "details": {"en": "...", "de": "...de"},
       "language": ["en","de"],
       "duration": 50,
+      "icon": "trophy",
+      "color": "danger",
       "author": "Bakhodir"
     },
     "raspiadc": {
@@ -97,6 +101,8 @@
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "...", "de": "...de"},
       "language": ["de","en"],
+      "icon": "user-secret",
+      "color": "primary",
       "duration": 42,
       "author": null
     },
@@ -105,13 +111,16 @@
       "short": {"en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"},
       "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
       "language": ["de","en"],
-      "author": null
+      "icon": "cutlery",
+      "color": "success"
     },
     "joepardy": {
       "title": "Joepardy",
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
       "language": ["de"],
+      "icon": "gamepad",
+      "color": "warning",
       "duration": 50,
       "author": "Stefan Siemer"
     },
@@ -120,6 +129,7 @@
       "short": {"en": "Come and see the results of our threading workshop", "de": "Komm und betrachte die Erfolge unseres Threading-Workshops"},
       "details": {"en": "...", "de": "...de"},
       "language": ["de","en"],
+      "icon": "eye",
       "duration": 30,
       "author": "Lisa Wolf"
     },
@@ -128,6 +138,8 @@
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."},
       "language": ["en"],
+      "icon": "trophy",
+      "color": "danger",
       "duration": null,
       "author": "Bakhodir"
     }

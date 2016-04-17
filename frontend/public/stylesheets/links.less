@@ -1,0 +1,36 @@
+a[href^='http://'], a[href^='https://'], a[href^='//'] {
+  color: @link-external-color;
+  &.text-muted {
+    color: @text-muted;
+  }
+
+  .icon() when (@link-external-icon) {
+    &:after {
+      .fa-icon();
+      content: @fa-var-external-link;
+      margin-left: 1px;
+      vertical-align: 50%;
+      font-size: 6pt;
+      color: @link-external-icon-color;
+    }
+    &.text-muted:after {
+      color: @text-muted;
+    }
+  }
+  .icon();
+  &:hover {
+    color: @link-external-hover-color;
+    &.text-muted {
+      color: @text-muted;
+    }
+    .iconColor() when (@link-external-icon) {
+      &:after {
+        color: @link-external-hover-icon-color;
+      }
+      &.text-muted:after {
+        color: @text-muted;
+      }
+    }
+    .iconColor();
+  }
+}

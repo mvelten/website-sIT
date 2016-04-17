@@ -21,9 +21,9 @@
       <ul id="language-selector" class="dropdown-menu">
         {{#each locales}}
           {{#if isActive}}
-            <li class="active"><a>{{language}} - {{locale}}</a></li>
+            <li class="text-mono active"><a>{{language}} - {{locale}}</a></li>
           {{else}}
-            <li><a href="{{localeURL locale}}">{{language}} - {{locale}}</a></li>
+            <li class="text-mono"><a href="{{localeURL locale}}">{{language}} - {{locale}}</a></li>
           {{/if}}
         {{/each}}
       </ul>

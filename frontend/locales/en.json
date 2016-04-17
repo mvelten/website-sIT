@@ -10,5 +10,13 @@
   },
   "archive": {
     "details": "Full details"
-  }
+  },
+  "year": {
+    "presentations": "Presentations"
+  },
+  "noAuthor": {
+    "text": "TBA",
+    "title": "To be announced. The speaker is not known yet."
+  },
+  "behalfOf": "on behalf of"
 }

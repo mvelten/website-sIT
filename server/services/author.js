@@ -9,6 +9,7 @@ exports.parse = parse;
 /*==================================================== Functions  ====================================================*/
 
 function parse(string) {
+  if (string === null) { return {name: null}; }
   let data = REGEX.exec(string);
   if (data == null) { throw new Error("Invalid author string."); }
   let result = {name: data[1]};

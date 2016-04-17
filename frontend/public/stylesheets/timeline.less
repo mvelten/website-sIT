@@ -1,0 +1,116 @@
+@timeline-line-color: darken(@color-two, 10%);
+@timeline-line-width: 3px;
+@timeline-badge-size: 30px;
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding: (@padding-large-vertical * 2) 0 @padding-large-vertical;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: (@timeline-badge-size - @timeline-line-width) / 2;
+    width: @timeline-line-width;
+    background-color: @timeline-line-color;
+  }
+
+  > li.timeline-label > a {
+    margin-bottom: @padding-large-vertical;
+    position: relative;
+    display: inline-block;
+    padding: @padding-base-vertical @padding-base-horizontal;
+    font-size: 1.1em;
+    border: @timeline-line-width solid @timeline-line-color;
+    border-radius: @border-radius-base;
+    background-color: @brand-primary;
+    font-weight: bold;
+    text-decoration: none;
+    color: fade(@body-bg, 80%);
+
+    &:hover {
+      color: @body-bg;
+    }
+  }
+
+  .timeline-item {
+    margin-bottom: @padding-large-vertical;
+    position: relative;
+
+    > .badge {
+      @inner-size: @timeline-badge-size - 2 * @timeline-line-width;
+      width: @timeline-badge-size;
+      height: @timeline-badge-size;
+      line-height: @inner-size;
+      font-size: (@inner-size / @line-height-computed) * 0.8em;
+      text-align: center;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      border: @timeline-line-width solid @timeline-line-color;
+      border-radius: 50%;
+      padding: 0;
+      color: @body-bg;
+
+      &.badge-default {
+        background-color: @text-color;
+      }
+
+      &.badge-primary {
+        background-color: @brand-primary;
+      }
+
+      &.badge-info {
+        background-color: @brand-info;
+      }
+
+      &.badge-success {
+        background-color: @brand-success;
+      }
+
+      &.badge-warning {
+        background-color: @brand-warning;
+      }
+
+      &.badge-danger {
+        background-color: @brand-danger;
+      }
+    }
+
+    > .panel {
+      position: relative;
+      background-color: @panel-bg;
+      margin-left: @timeline-badge-size + 15px;
+      border-radius: @panel-border-radius;
+      .box-shadow(0 1px 1px rgba(0, 0, 0, .05));
+
+      &:before {
+        display: inline-block;
+        position: absolute;
+        top: 16px;
+        left: -15px;
+        border: 15px solid transparent;
+        border-right-color: rgba(0, 0, 0, 0.05);
+        border-left-width: 0;
+        content: " ";
+      }
+
+      &:after {
+        display: inline-block;
+        position: absolute;
+        top: 17px;
+        left: -14px;
+        border: 14px solid transparent;
+        border-right-color: @panel-bg;
+        border-left-width: 0;
+        content: " ";
+      }
+
+      > .panel-heading, > .panel-footer {
+        margin: 0;
+      }
+    }
+  }
+}

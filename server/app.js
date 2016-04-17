@@ -60,7 +60,10 @@ let hbs = ehbs.create({
     headerItems: require("./helpers/headerItems"),
     i18n: require("./helpers/i18n"),
     localeURL: require("./helpers/localeURL"),
-    url: require("./helpers/url")
+    moment: require("./helpers/moment"),
+    momentAdd: require("./helpers/momentAdd"),
+    url: require("./helpers/url"),
+    withLookup: require("./helpers/withLookup")
   }
 });
 

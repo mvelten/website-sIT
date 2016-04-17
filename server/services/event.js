@@ -40,8 +40,8 @@ function prepareYear(obj) {
 }
 
 function preparePresentation(obj) {
-  if (typeof obj.author === "string") { obj.author = author.parse(obj.author); }
-  if (typeof obj.sponsor === "string") { obj.sponsor = author.parse(obj.sponsor); }
+  if (obj.author === null || typeof obj.author === "string") { obj.author = author.parse(obj.author); }
+  if (typeof obj.company === "string") { obj.company = author.parse(obj.company); }
   return obj;
 }
 

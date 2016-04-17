@@ -10,5 +10,13 @@
   },
   "archive": {
     "details": "Alle Informationen"
-  }
+  },
+  "year": {
+    "presentations": "Vortr&auml;ge"
+  },
+  "noAuthor": {
+    "text": "Noch nicht bekannt",
+    "title": "Uns ist der/die Vortragende noch nicht bekannt."
+  },
+  "behalfOf": "im Auftrag von"
 }
