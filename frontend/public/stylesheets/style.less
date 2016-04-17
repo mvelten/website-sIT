@@ -86,6 +86,25 @@ body {
   }
 }
 
+#workshops > .panel:last-child {
+  margin-bottom: 0;
+}
+
+.tab-content.well {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.panel-heading, .panel-footer {
+  margin: 0;
+}
+
+ol.workshop-times {
+  list-style: none;
+}
+
 @fonts-path: "/fonts";
 @fa-font-path: @fonts-path;
 
@@ -97,6 +116,7 @@ body {
 @link-external-icon: true;
 @link-external-icon-color: @link-external-color;
 @link-external-hover-icon-color: @link-external-hover-color;
+@nav-tabs-active-link-hover-bg: @well-bg;
 
 @color-one: @brand-primary;
 @color-two: #FF8000;

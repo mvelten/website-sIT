@@ -12,7 +12,9 @@
     "details": "Alle Informationen"
   },
   "year": {
-    "presentations": "Vortr&auml;ge"
+    "overview": "Einleitung",
+    "presentations": "Vortr&auml;ge",
+    "workshops": "Workshops"
   },
   "noAuthor": {
     "text": "Noch nicht bekannt",

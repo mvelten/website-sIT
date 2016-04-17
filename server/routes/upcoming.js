@@ -23,6 +23,6 @@ function getUpcomingData(req) {
         let year = index.upcoming;
         return event
             .readOne(year)
-            .then(function (data) { return {year: year, data: event.localizePresentation(data, req.locale)}; });
+            .then(function (data) { return {year: year, data: event.localize(data, req.locale)}; });
       });
 }

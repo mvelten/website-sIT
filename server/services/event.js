@@ -14,7 +14,7 @@ const BASE_PATH = path.join(__dirname, "..", "..", "presentations");
 exports.readIndex = readIndex;
 exports.readOne = readOne;
 
-exports.localizePresentation = localizePresentation;
+exports.localize = localize;
 
 /*==================================================== Functions  ====================================================*/
 
@@ -32,24 +32,29 @@ function readIndex() {
 }
 
 function prepareYear(obj) {
-  _.each(obj.presentations, preparePresentation);
+  _.each(obj.workshops, prepareEvent);
+  _.each(obj.presentations, prepareEvent);
   _.each(obj.description, function (value, key) {
     if (_.isArray(value)) { obj.description[key] = _.join(value, "\n"); }
   });
   return obj;
 }
 
-function preparePresentation(obj) {
+function prepareEvent(obj) {
   if (obj.author === null || typeof obj.author === "string") { obj.author = author.parse(obj.author); }
   if (typeof obj.company === "string") { obj.company = author.parse(obj.company); }
   return obj;
 }
 
-function localizePresentation(obj, locale) {
+function localize(obj, locale) {
+  let localizeIteratee = _.partial(localizeEvent, _, locale);
   obj.description = obj.description[locale];
-  _.each(obj.presentations, function (obj) {
-    obj.short = obj.short[obj.short.hasOwnProperty(locale) ? locale : obj.language[0]];
-    obj.details = obj.details[obj.details.hasOwnProperty(locale) ? locale : obj.language[0]];
-  });
+  _.each(obj.workshops, localizeIteratee);
+  _.each(obj.presentations, localizeIteratee);
   return obj;
+}
+
+function localizeEvent(event, locale) {
+  event.short = event.short[event.short.hasOwnProperty(locale) ? locale : event.language[0]];
+  event.details = event.details[event.details.hasOwnProperty(locale) ? locale : event.language[0]];
 }

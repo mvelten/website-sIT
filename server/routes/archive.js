@@ -25,7 +25,7 @@ function getArchiveData(req) {
         return Promise.all(_.map(index.archive, function (year) {
           return event
               .readOne(year)
-              .then(function (data) { return {year: year, data: event.localizePresentation(data, req.locale)}; });
+              .then(function (data) { return {year: year, data: event.localize(data, req.locale)}; });
         }));
       })
       .then(function (list) { return {list: list}; });
@@ -43,6 +43,6 @@ function getYearData(req) {
         }
         return event
             .readOne(year)
-            .then(function (data) { return {year: year, data: event.localizePresentation(data, req.locale)}; });
+            .then(function (data) { return {year: year, data: event.localize(data, req.locale)}; });
       });
 }

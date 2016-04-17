@@ -1,0 +1,10 @@
+{{#if author}}
+  <div class="panel-footer">
+    {{>author}}
+    <div class="pull-right">
+      {{#each language}}
+        <small class="text-mono presentation-language">{{this}}</small>
+      {{/each}}
+    </div>
+  </div>
+{{/if}}

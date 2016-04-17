@@ -7,6 +7,16 @@
       ""
     ]
   },
+  "workshops": [
+    {
+      "title": "Threading Workshop",
+      "times": [{"datetime": "2016/05/20 13:00", "duration": null}],
+      "short": {"de": "Stricken lernen für Einsteiger"},
+      "details": {"de": "..."},
+      "language": ["de"],
+      "author": "Lisa Wolf"
+    }
+  ],
   "presentations": {
     "begruessung": {
       "title": "Begrüßung",
@@ -82,17 +92,15 @@
       "title": "Programming Challenge Contests",
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "...", "de": "...de"},
-      "language": ["en","de"],
+      "language": ["en", "de"],
       "duration": 50,
-      "icon": "trophy",
-      "color": "danger",
       "author": "Bakhodir"
     },
     "raspiadc": {
       "title": "Raspberry Pi und ADC",
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "...", "de": "...de"},
-      "language": ["de","en"],
+      "language": ["de", "en"],
       "duration": 50,
       "author": "Sebastian Groß"
     },
@@ -100,7 +108,7 @@
       "title": "Secret presentation",
       "short": {"en": "...", "de": "...de"},
       "details": {"en": "...", "de": "...de"},
-      "language": ["de","en"],
+      "language": ["de", "en"],
       "icon": "user-secret",
       "color": "primary",
       "duration": 42,
@@ -108,9 +116,11 @@
     },
     "social": {
       "title": "Social Events",
-      "short": {"en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"},
+      "short": {
+        "en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"
+      },
       "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
-      "language": ["de","en"],
+      "language": ["de", "en"],
       "icon": "cutlery",
       "color": "success"
     },
@@ -126,9 +136,12 @@
     },
     "results": {
       "title": "Threading results",
-      "short": {"en": "Come and see the results of our threading workshop", "de": "Komm und betrachte die Erfolge unseres Threading-Workshops"},
+      "short": {
+        "en": "Come and see the results of our threading workshop",
+        "de": "Komm und betrachte die Erfolge unseres Threading-Workshops"
+      },
       "details": {"en": "...", "de": "...de"},
-      "language": ["de","en"],
+      "language": ["de", "en"],
       "icon": "eye",
       "duration": 30,
       "author": "Lisa Wolf"
@@ -136,7 +149,9 @@
     "challenge": {
       "title": "Programming Challenge of sIT16",
       "short": {"en": "...", "de": "...de"},
-      "details": {"en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."},
+      "details": {
+        "en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."
+      },
       "language": ["en"],
       "icon": "trophy",
       "color": "danger",

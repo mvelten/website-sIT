@@ -12,7 +12,9 @@
     "details": "Full details"
   },
   "year": {
-    "presentations": "Presentations"
+    "overview": "Overview",
+    "presentations": "Presentations",
+    "workshops": "Workshops"
   },
   "noAuthor": {
     "text": "TBA",
