@@ -1,6 +1,6 @@
 {{#if poster}}
   <div class="media">
-    <div class="media-body">{{{overview}}}</div>
+    <div class="media-body text-justify text-large">{{{overview}}}</div>
     <div class="media-right">
       <div class="thumbnail">
         <a href="/poster/{{year}}/sIT-{{year}}-full.jpg">
@@ -11,5 +11,5 @@
     </div>
   </div>
 {{else}}
-  {{{overview}}}
+  <div class="text-justify text-large">{{{overview}}}</div>
 {{/if}}
