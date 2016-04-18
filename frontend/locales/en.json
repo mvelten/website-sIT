@@ -5,7 +5,8 @@
     "archive": "Archive",
     "upcoming": "Upcoming",
     "location": "Location",
-    "language": "Language"
+    "language": "Language",
+    "impressum": "Impressum"
   },
   "archive": {
     "details": "Full details"
