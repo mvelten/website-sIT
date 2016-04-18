@@ -36,10 +36,13 @@
     "author": null,
     "company": "Aicon"
   },
-  "murderer.js": {
+  "murderer-js": {
     "title": "murderer.js",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {"en": "Insights into a social interaction game backed by a node.js webserver.", "de": "Einsichten in ein Sozialinteraktionsspiel mit Unterst&uuml;tzung eines node.js Webservers"},
+    "details": {
+      "en": "murderer.js is a hybrid game that connects real interaction with a web-service.<br/>The project began during the O-Phase 2015 and continued as a neat hobby of mine. A live demo including the rules can be viewed at <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a>. The source code is publicly available on <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a>.<br/>The presentation will consist of an introduction into the game concept and various aspects of the development process.<br/>To demonstrate the fun of the game, we will start a round that will accompany the remaining progress of the sIT2016.",
+      "de": "Bei murderer.js handelt es sich um ein hybrides Spiel das reale Interaktion mit einem Web-Service kombiniert.<br/>Das Projekt ist im Laufe der O-Phase 2015 entstanden und hat sich seither zu einem netten Hobby entwickelt. Eine live-version samt Regelwerk kann unter <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a> eingesehen werden. Der Source-Code ist auf <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a> &ouml;ffentlich zug&auml;nglich.<br/>Es wird eine Einf&uuml;hrung in das Spielkonzept, sowie die Entwicklung des Webservers gegeben.<br/>Um den Spielspa&szlig; zu demonstrieren, wird auch eine Spielrunde den folgenden Verlauf der sIT2016 begleiten."
+    },
     "language": ["de", "en"],
     "duration": 50,
     "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://github.com/frissdiegurke)"
