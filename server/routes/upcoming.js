@@ -1,5 +1,7 @@
 "use strict";
 
+let _ = require("lodash");
+
 let event = require("../services/event");
 let Router = require("../services/Router");
 
@@ -23,6 +25,6 @@ function getUpcomingData(req) {
         let year = index.upcoming;
         return event
             .readOne(year)
-            .then(function (data) { return {year: year, data: event.localize(data, req.locale)}; });
+            .then(function (data) { return _.assign({year: year}, event.localize(data, req.locale)); });
       });
 }

@@ -1,0 +1,15 @@
+{{#if poster}}
+  <div class="media">
+    <div class="media-body">{{{overview}}}</div>
+    <div class="media-right">
+      <div class="thumbnail">
+        <a href="/poster/{{year}}/full.jpg">
+          <img class="poster-preview" src="/poster/{{year}}/w200.jpg" alt="poster" class="media-object"/>
+        </a>
+        <div class="caption text-right">Copyright &copy; {{year}} Yvi</div>
+      </div>
+    </div>
+  </div>
+{{else}}
+  {{{overview}}}
+{{/if}}

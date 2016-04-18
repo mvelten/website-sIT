@@ -27,6 +27,7 @@ const ROUTES = {
   "/": [require("./routes/home"), require("./routes/legal")],
   "/upcoming": require("./routes/upcoming"),
   "/archive": require("./routes/archive"),
+  "/poster": require("./routes/poster"),
   "/location": require("./routes/location"),
   "/fonts": require("./routes/fonts"),
   "/scripts": scripts

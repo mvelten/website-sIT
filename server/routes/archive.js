@@ -1,6 +1,7 @@
 "use strict";
 
 let _ = require("lodash");
+let Promise = require("bluebird");
 let event = require("../services/event");
 let Router = require("../services/Router");
 
@@ -23,9 +24,13 @@ function getArchiveData(req) {
       .readIndex()
       .then(function (index) {
         return Promise.all(_.map(index.archive, function (year) {
-          return event
-              .readOne(year)
-              .then(function (data) { return {year: year, data: event.localize(data, req.locale)}; });
+          return Promise
+              .props({
+                year: year,
+                overview: event.readOverview(year),
+                poster: event.checkPoster(year)
+              })
+              .then(_.partial(event.localize, _, req.locale));
         }));
       })
       .then(function (list) { return {list: list}; });
@@ -43,6 +48,6 @@ function getYearData(req) {
         }
         return event
             .readOne(year)
-            .then(function (data) { return {year: year, data: event.localize(data, req.locale)}; });
+            .then(function (data) { return _.assign({year: year}, event.localize(data, req.locale)); });
       });
 }

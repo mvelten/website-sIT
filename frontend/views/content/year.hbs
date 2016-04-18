@@ -4,14 +4,14 @@
   <li role="presentation" class="active">
     <a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">{{{i18n 'year.overview'}}}</a>
   </li>
-  {{#if data.schedule.length}}
+  {{#if schedule.length}}
     <li role="presentation">
       <a href="#presentations" aria-controls="presentations" role="tab" data-toggle="tab">
         {{{i18n 'year.presentations'}}}
       </a>
     </li>
   {{/if}}
-  {{#if data.workshops.length}}
+  {{#if workshops.length}}
     <li role="presentation">
       <a href="#workshops" aria-controls="workshops" role="tab" data-toggle="tab">{{{i18n 'year.workshops'}}}</a>
     </li>
@@ -20,22 +20,22 @@
 
 <div class="tab-content well">
 
-  <div role="tabpanel" id="overview" class="tab-pane active">{{{data.description}}}</div>
+  <div role="tabpanel" id="overview" class="tab-pane active">{{> overview}}</div>
 
   <div role="tabpanel" id="presentations" class="tab-pane">
     <ol class="timeline">
-      {{#each data.schedule}}
+      {{#each schedule}}
         <li class="timeline-label">
           <a role="button" data-toggle="collapse" data-parent="#presentations"
              href="#presentations-{{moment date format="YYYY-MM-DD" input="YYYY/MM/DD"}}" aria-expanded="true"
              aria-controls="presentations-{{moment date format="YYYY-MM-DD" input="YYYY/MM/DD"}}">
-            {{moment date format="dddd, L" input="YYYY/MM/DD"}}
+            <i class="fa fa-fw fa-calendar"></i> {{moment date format="dddd, L" input="YYYY/MM/DD"}}
           </a>
         </li>
         <li id="presentations-{{moment date format="YYYY-MM-DD" input="YYYY/MM/DD"}}"
             class="timeline-items collapse in">
-          {{#each content}}
-            {{#withLookup ../../data.presentations presentation}}
+          {{#each list}}
+            {{#withLookup ../../presentations presentation}}
               <div class="timeline-item">
                 <div class="badge badge-{{#if color}}{{color}}{{else}}info{{/if}}">
                   <i class="fa fa-{{#if icon}}{{icon}}{{else}}comment{{/if}}"></i>
@@ -63,7 +63,7 @@
   </div>
 
   <div role="tabpanel" id="workshops" class="tab-pane">
-    {{#each data.workshops}}
+    {{#each workshops}}
       <div class="panel panel-info">
         <h4 class="panel-heading">{{title}}</h4>
         <div class="panel-body">
@@ -71,7 +71,9 @@
             {{#each times}}
               <li>
                 <i class="fa fa-fw fa-calendar"></i>
-                {{moment datetime format="LLLL" input="YYYY/MM/DD hh:mm"}}
+                {{moment datetime format="dddd, L" input="YYYY/MM/DD hh:mm"}}
+                <i class="fa fa-fw fa-clock-o"></i>
+                {{moment datetime format="LT" input="YYYY/MM/DD hh:mm"}}
                 <i class="fa fa-fw fa-ellipsis-h"></i>
                 {{#if duration}}
                   {{momentAdd datetime duration format="LT" input="YYYY/MM/DD hh:mm" unit="minutes"}}

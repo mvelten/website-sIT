@@ -1,0 +1,142 @@
+{
+  "begruessung": {
+    "title": "Begrüßung",
+    "short": {"en": "Welcome", "de": "Willkommen zur sIT 2016"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "duration": 15,
+    "icon": "commenting",
+    "color": "success",
+    "author": "Fachgruppe Informatik"
+  },
+  "deriva": {
+    "title": "Deriva",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "duration": 45,
+    "author": null,
+    "company": "Deriva"
+  },
+  "hosteurope": {
+    "title": "Host Europe",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "duration": 45,
+    "author": null,
+    "company": "Host Europe"
+  },
+  "aicon": {
+    "title": "Aicon",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "duration": 30,
+    "author": null,
+    "company": "Aicon"
+  },
+  "murderer.js": {
+    "title": "murderer.js",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "duration": 50,
+    "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://github.com/frissdiegurke)"
+  },
+  "onlinewahlen": {
+    "title": "Onlinewahlen",
+    "short": {"de": "..."},
+    "details": {"de": "..."},
+    "language": ["de", "en"],
+    "duration": 30,
+    "author": "Moritz Strube",
+    "company": "Polyas: (https://www.polyas.de/)"
+  },
+  "robin": {
+    "title": "TBA",
+    "short": {"de": "...", "en": "...en"},
+    "details": {"de": "...", "en": "...en"},
+    "language": ["de", "en"],
+    "duration": 50,
+    "author": "Robin (google)"
+  },
+  "matze": {
+    "title": "TBA",
+    "short": {"de": "...", "en": "...en"},
+    "details": {"de": "...", "en": "...en"},
+    "language": ["de", "en"],
+    "duration": 50,
+    "author": "Matthias Velten (FlaviaIT)"
+  },
+  "contest": {
+    "title": "Programming Challenge Contests",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["en", "de"],
+    "duration": 50,
+    "author": "Bakhodir"
+  },
+  "raspiadc": {
+    "title": "Raspberry Pi und ADC",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "duration": 50,
+    "author": "Sebastian Groß"
+  },
+  "secret": {
+    "title": "Secret presentation",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "icon": "user-secret",
+    "color": "primary",
+    "duration": 42,
+    "author": null
+  },
+  "social": {
+    "title": "Social Events",
+    "short": {
+      "en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"
+    },
+    "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
+    "language": ["de", "en"],
+    "icon": "cutlery",
+    "color": "success"
+  },
+  "joepardy": {
+    "title": "Joepardy",
+    "short": {"en": "...", "de": "...de"},
+    "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
+    "language": ["de"],
+    "icon": "gamepad",
+    "color": "warning",
+    "duration": 50,
+    "author": "Stefan Siemer"
+  },
+  "results": {
+    "title": "Threading results",
+    "short": {
+      "en": "Come and see the results of our threading workshop",
+      "de": "Komm und betrachte die Erfolge unseres Threading-Workshops"
+    },
+    "details": {"en": "...", "de": "...de"},
+    "language": ["de", "en"],
+    "icon": "eye",
+    "duration": 30,
+    "author": "Lisa Wolf"
+  },
+  "challenge": {
+    "title": "Programming Challenge of sIT16",
+    "short": {"en": "...", "de": "...de"},
+    "details": {
+      "en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."
+    },
+    "language": ["en"],
+    "icon": "trophy",
+    "color": "danger",
+    "duration": null,
+    "author": "Bakhodir"
+  }
+}

@@ -12,17 +12,52 @@ const BASE_PATH = path.join(__dirname, "..", "..", "presentations");
 /*===================================================== Exports  =====================================================*/
 
 exports.readIndex = readIndex;
+
 exports.readOne = readOne;
+exports.readOverview = readOverview;
+exports.checkPoster = checkPoster;
 
 exports.localize = localize;
 
 /*==================================================== Functions  ====================================================*/
 
 function readOne(year) {
-  return fs
-      .readFileAsync(path.join(BASE_PATH, year, "index.json"))
-      .then(JSON.parse)
+  let dir = path.join(BASE_PATH, year);
+  return Promise
+      .props({
+        overview: readOverview(year),
+        schedule: readJSONNoFail(path.join(dir, "schedule.json")),
+        presentations: readJSONNoFail(path.join(dir, "presentations.json")),
+        workshops: readJSONNoFail(path.join(dir, "workshops.json")).then(function (res) { return res.workshops; }),
+        poster: checkPoster(year)
+      })
       .then(prepareYear);
+}
+
+function checkPoster(year) {
+  return fs.accessAsync(path.join(BASE_PATH, year, "poster"), fs.R_OK).thenReturn(true).catchReturn(false);
+}
+
+function readOverview(year) {
+  let dir = path.join(BASE_PATH, year, "overview");
+  return Promise
+      .props({
+        de: fs
+            .readFileAsync(path.join(dir, "de.html"))
+            .then(function (res) { return res.toString(); })
+            .catchReturn(""),
+        en: fs
+            .readFileAsync(path.join(dir, "en.html"))
+            .then(function (res) { return res.toString(); })
+            .catchReturn("")
+      });
+}
+
+function readJSONNoFail(file) {
+  return fs
+      .readFileAsync(file)
+      .then(JSON.parse)
+      .catchReturn({});
 }
 
 function readIndex() {
@@ -34,9 +69,11 @@ function readIndex() {
 function prepareYear(obj) {
   _.each(obj.workshops, prepareEvent);
   _.each(obj.presentations, prepareEvent);
-  _.each(obj.description, function (value, key) {
-    if (_.isArray(value)) { obj.description[key] = _.join(value, "\n"); }
-  });
+  obj.schedule = _
+      .chain(obj.schedule)
+      .map(function (presentations, date) { return {date: date, list: presentations}; })
+      .sortBy("date")
+      .value();
   return obj;
 }
 
@@ -48,13 +85,17 @@ function prepareEvent(obj) {
 
 function localize(obj, locale) {
   let localizeIteratee = _.partial(localizeEvent, _, locale);
-  obj.description = obj.description[locale];
+  obj.overview = obj.overview[locale];
   _.each(obj.workshops, localizeIteratee);
   _.each(obj.presentations, localizeIteratee);
   return obj;
 }
 
 function localizeEvent(event, locale) {
-  event.short = event.short[event.short.hasOwnProperty(locale) ? locale : event.language[0]];
-  event.details = event.details[event.details.hasOwnProperty(locale) ? locale : event.language[0]];
+  if (event.hasOwnProperty("short")) {
+    event.short = event.short[event.short.hasOwnProperty(locale) ? locale : event.language[0]];
+  }
+  if (event.hasOwnProperty("details")) {
+    event.details = event.details[event.details.hasOwnProperty(locale) ? locale : event.language[0]];
+  }
 }

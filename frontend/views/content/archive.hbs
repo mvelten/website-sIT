@@ -10,7 +10,7 @@
         </h2>
       </div>
       <div id="{{year}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{year}}">
-        <div class="panel-body">{{{data.description}}}</div>
+        <div class="panel-body">{{> overview}}</div>
         <div class="panel-footer"><a href="{{url 'archive' year}}">{{i18n 'archive.details'}}</a></div>
       </div>
     </div>

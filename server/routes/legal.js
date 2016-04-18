@@ -11,4 +11,4 @@ exports.apiRouter = router.apiRouter;
 
 /*------------------------------------------------------ Routes ------------------------------------------------------*/
 
-router.get("/imprint", "imprint");
+router.get("/impressum", "impressum");

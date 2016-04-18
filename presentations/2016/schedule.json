@@ -1,0 +1,27 @@
+{
+  "2016/05/19": [
+    {"time": "15:00", "presentation": "begruessung"},
+    {"time": "15:15", "presentation": "onlinewahlen"},
+    {"time": "16:00", "presentation": "deriva"},
+    {"time": "17:00", "presentation": "hosteurope"},
+    {"time": "18:00", "presentation": "aicon"},
+    {"time": "19:00", "presentation": "joepardy"},
+    {"time": "19:42", "presentation": "social"}
+  ],
+  "2016/05/20": [
+    {"time": "13:00", "presentation": "murderer.js"},
+    {"time": "14:00", "presentation": "secret"},
+    {"time": "15:00", "presentation": "robin"},
+    {"time": "16:00", "presentation": "matze"},
+    {"time": "17:00", "presentation": "contest"},
+    {"time": "18:00", "presentation": "raspiadc"},
+    {"time": "19:00", "presentation": "secret"},
+    {"time": "19:40", "presentation": "joepardy"},
+    {"time": "20:20", "presentation": "social"}
+  ],
+  "2016/05/21": [
+    {"time": "14:30", "presentation": "results"},
+    {"time": "15:00", "presentation": "challenge"},
+    {"time": "20:00", "presentation": "social"}
+  ]
+}
