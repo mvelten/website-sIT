@@ -19,5 +19,9 @@
     "text": "TBA",
     "title": "To be announced. The speaker is not known yet."
   },
-  "behalfOf": "on behalf of"
+  "behalfOf": "on behalf of",
+  "event": {
+    "more": "show more",
+    "less": "show less"
+  }
 }

@@ -13,6 +13,11 @@ $(window).ready(function () {
     $body.scrollTop(scroll);
   });
 
+  $(document).on("click", "a.show-toggle", function () {
+    var $el = $(this);
+    $el.text($el.data($el.hasClass("collapsed") ? "more" : "less"));
+  });
+
   function checkTab() {
     var hash = window.location.hash;
     if (hash) { $("ul.nav a[href=\"" + hash + "\"]").tab("show"); }

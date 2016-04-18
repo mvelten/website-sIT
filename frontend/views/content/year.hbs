@@ -51,7 +51,7 @@
                       {{/if}}
                     </small>
                   </h4>
-                  <div class="panel-body">{{{details}}}</div>
+                  <div class="panel-body">{{> eventBody}}</div>
                   {{> eventFooter}}
                 </div>
               </div>
@@ -81,7 +81,7 @@
               </li>
             {{/each}}
           </ol>
-          {{{details}}}
+          {{> eventBody}}
         </div>
         {{> eventFooter}}
       </div>

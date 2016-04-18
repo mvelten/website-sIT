@@ -19,5 +19,9 @@
     "text": "Noch nicht bekannt",
     "title": "Uns ist der/die Vortragende noch nicht bekannt."
   },
-  "behalfOf": "im Auftrag von"
+  "behalfOf": "im Auftrag von",
+  "event": {
+    "more": "zeigen",
+    "less": "verbergen"
+  }
 }
