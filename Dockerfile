@@ -1,11 +1,17 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage
 
-RUN apt-get update && apt-get install npm nodejs
+RUN apt-get update
+
+ADD nodejs-5 /usr/local/bin/nodejs-5
+RUN /usr/local/bin/nodejs-5 && apt-get install -y nodejs
+
+RUN mkdir /etc/service/sit
+ADD start /etc/service/sit/run
 
 ADD app /opt/sit
-ADD start /opt/sit/start
 
 RUN cd /opt/sit && npm i --production
 
-CMD ["/opt/sit/start"]
+EXPOSE 3000
+CMD ["/sbin/my_init"]
 

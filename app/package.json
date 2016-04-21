@@ -4,7 +4,7 @@
   "private": true,
   "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://frissdiegurke.com)",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodejs ./bin/www"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
