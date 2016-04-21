@@ -1,5 +1,5 @@
-/node_modules
 .idea
+/app/npm-debug.log
 
-/frontend/public/stylesheets/*.css
-npm-debug.log
+/app/frontend/public/stylesheets/*.css
+/app/node_modules
