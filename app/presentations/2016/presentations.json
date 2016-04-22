@@ -1,6 +1,6 @@
 {
   "begruessung": {
-    "title": "Begrüßung",
+    "title": "Begr&uuml;&szlig;ung",
     "short": {"en": "Welcome", "de": "Willkommen zur sIT 2016"},
     "details": {"en": "...", "de": "...de"},
     "language": ["de", "en"],
@@ -86,7 +86,7 @@
     "details": {"en": "...", "de": "...de"},
     "language": ["de", "en"],
     "duration": 50,
-    "author": "Sebastian Groß"
+    "author": "Sebastian Gro&szlig;"
   },
   "secret": {
     "title": "Secret presentation",
