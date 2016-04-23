@@ -42,7 +42,7 @@
                 </div>
                 <div class="panel panel-default">
                   <h4 class="panel-heading">
-                    {{title}}
+                    {{{title}}}
                     <small class="text-muted text-mono pull-right">
                       <i class="fa fa-fw fa-clock-o"></i> {{moment ../time format="LT" input="hh:mm"}}
                       <i class="fa fa-fw fa-ellipsis-h"></i>
@@ -65,7 +65,7 @@
   <div role="tabpanel" id="workshops" class="tab-pane">
     {{#each workshops}}
       <div class="panel panel-info">
-        <h4 class="panel-heading">{{title}}</h4>
+        <h4 class="panel-heading">{{{title}}}</h4>
         <div class="panel-body">
           <ol class="workshop-times text-muted text-mono">
             {{#each times}}
