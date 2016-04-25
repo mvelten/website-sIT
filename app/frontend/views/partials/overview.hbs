@@ -1,14 +1,14 @@
 {{#if poster}}
   <div class="media">
-    <div class="media-body text-justify text-large">{{{overview}}}</div>
-    <div class="media-right">
+    <div class="pull-right poster-container">
       <div class="thumbnail">
         <a href="/poster/{{year}}/sIT-{{year}}-full.jpg">
-          <img class="poster-preview" src="/poster/{{year}}/sIT-{{year}}-200.jpg" alt="poster" class="media-object"/>
+          <img class="media-object poster-preview" src="/poster/{{year}}/sIT-{{year}}-200.jpg" alt="poster"/>
         </a>
         <div class="caption text-right">Copyright &copy; {{year}} Yvi</div>
       </div>
     </div>
+    <div class="text-justify text-large">{{{overview}}}</div>
   </div>
 {{else}}
   <div class="text-justify text-large">{{{overview}}}</div>
