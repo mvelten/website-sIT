@@ -2,7 +2,7 @@
   "begruessung": {
     "title": "Begr&uuml;&szlig;ung",
     "short": {"en": "Welcome", "de": "Willkommen zur sIT 2016"},
-    "details": {"en": "...", "de": "...de"},
+    "details": {},
     "language": ["de", "en"],
     "duration": 15,
     "icon": "commenting",
@@ -11,8 +11,8 @@
   },
   "deriva": {
     "title": "Deriva",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 45,
     "author": null,
@@ -20,8 +20,8 @@
   },
   "hosteurope": {
     "title": "Host Europe",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 45,
     "author": null,
@@ -29,8 +29,8 @@
   },
   "aicon": {
     "title": "Aicon",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 30,
     "author": null,
@@ -38,60 +38,65 @@
   },
   "murderer-js": {
     "title": "murderer.js",
-    "short": {"en": "Insights into a social interaction game backed by a node.js webserver.", "de": "Einsichten in ein Sozialinteraktionsspiel mit Unterst&uuml;tzung eines node.js Webservers"},
+    "short": {
+      "en": "Insights into a social interaction game backed by a node.js webserver.",
+      "de": "Einsichten in ein Sozialinteraktionsspiel mit Unterst&uuml;tzung eines node.js Webservers."
+    },
     "details": {
       "en": "murderer.js is a hybrid game that connects real interaction with a web-service.<br/>The project began during the O-Phase 2015 and continued as a neat hobby of mine. A live demo including the rules can be viewed at <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a>. The source code is publicly available on <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a>.<br/>The presentation will consist of an introduction into the game concept and various aspects of the development process.<br/>To demonstrate the fun of the game, we will start a round that will accompany the remaining progress of the sIT2016.",
       "de": "Bei murderer.js handelt es sich um ein hybrides Spiel das reale Interaktion mit einem Web-Service kombiniert.<br/>Das Projekt ist im Laufe der O-Phase 2015 entstanden und hat sich seither zu einem netten Hobby entwickelt. Eine live-version samt Regelwerk kann unter <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a> eingesehen werden. Der Source-Code ist auf <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a> &ouml;ffentlich zug&auml;nglich.<br/>Es wird eine Einf&uuml;hrung in das Spielkonzept, sowie die Entwicklung des Webservers gegeben.<br/>Um den Spielspa&szlig; zu demonstrieren, wird auch eine Spielrunde den folgenden Verlauf der sIT2016 begleiten."
     },
     "language": ["de", "en"],
     "duration": 50,
-    "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://github.com/frissdiegurke)"
+    "author": "Ole Reglitzki (https://github.com/frissdiegurke)"
   },
   "onlinewahlen": {
     "title": "Onlinewahlen",
-    "short": {"de": "..."},
-    "details": {"de": "..."},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 30,
     "author": "Moritz Strube",
-    "company": "Polyas: (https://www.polyas.de/)"
+    "company": "Polyas (https://www.polyas.de/)"
   },
   "robin": {
     "title": "TBA",
-    "short": {"de": "...", "en": "...en"},
-    "details": {"de": "...", "en": "...en"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 50,
-    "author": "Robin (google)"
+    "author": "Robin",
+    "company": "Google (https://www.google.com)"
   },
   "matze": {
     "title": "TBA",
-    "short": {"de": "...", "en": "...en"},
-    "details": {"de": "...", "en": "...en"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 50,
-    "author": "Matthias Velten (FlaviaIT)"
+    "author": "Matthias Velten",
+    "company": "FlaviaIT (http://www.flavia-it.de/)"
   },
   "contest": {
     "title": "Programming Challenge Contests",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {},
+    "details": {},
     "language": ["en", "de"],
     "duration": 50,
     "author": "Bakhodir"
   },
   "raspiadc": {
     "title": "Raspberry Pi und ADC",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "duration": 50,
     "author": "Sebastian Gro&szlig;"
   },
   "secret": {
     "title": "Secret presentation",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "...de"},
+    "short": {},
+    "details": {},
     "language": ["de", "en"],
     "icon": "user-secret",
     "color": "primary",
@@ -103,15 +108,15 @@
     "short": {
       "en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"
     },
-    "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
+    "details": {},
     "language": ["de", "en"],
     "icon": "cutlery",
     "color": "success"
   },
   "joepardy": {
     "title": "Joepardy",
-    "short": {"en": "...", "de": "...de"},
-    "details": {"en": "...", "de": "Hurra hurra die sIT ist da"},
+    "short": {},
+    "details": {},
     "language": ["de"],
     "icon": "gamepad",
     "color": "warning",
@@ -124,7 +129,7 @@
       "en": "Come and see the results of our threading workshop",
       "de": "Komm und betrachte die Erfolge unseres Threading-Workshops"
     },
-    "details": {"en": "...", "de": "...de"},
+    "details": {},
     "language": ["de", "en"],
     "icon": "eye",
     "duration": 30,
@@ -132,7 +137,7 @@
   },
   "challenge": {
     "title": "Programming Challenge of sIT16",
-    "short": {"en": "...", "de": "...de"},
+    "short": {},
     "details": {
       "en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."
     },

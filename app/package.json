@@ -1,10 +1,10 @@
 {
-  "name": "sIT",
-  "version": "0.0.1",
+  "name": "sIT-website",
+  "version": "0.1.0",
   "private": true,
   "author": "Ole Reglitzki <frissdiegurke@protonmail.com> (https://frissdiegurke.com)",
   "scripts": {
-    "start": "nodejs ./bin/www"
+    "start": "env nodejs bin/www"
   },
   "dependencies": {
     "bluebird": "^3.3.4",

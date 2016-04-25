@@ -1,5 +1,4 @@
 #!/bin/bash
 
-cd /opt/sit
+cd /opt/sit-website
 npm start
-
