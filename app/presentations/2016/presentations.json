@@ -113,6 +113,15 @@
     "icon": "cutlery",
     "color": "success"
   },
+  "threading-introduction": {
+    "title": "Vorstellung des Threading Workshops",
+    "short": {},
+    "details": {},
+    "language": ["de"],
+    "icon": "briefcase",
+    "duration": 30,
+    "author": "Lisa Wolf"
+  },
   "joepardy": {
     "title": "Joepardy",
     "short": {},
@@ -120,7 +129,7 @@
     "language": ["de"],
     "icon": "gamepad",
     "color": "warning",
-    "duration": 50,
+    "duration": 45,
     "author": "Stefan Siemer"
   },
   "results": {
