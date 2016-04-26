@@ -1,10 +1,13 @@
-{{#if author}}
+{{#if hasFooter}}
   <div class="panel-footer">
     {{>author}}
     <div class="pull-right">
-      {{#each language}}
-        <small class="text-mono presentation-language">{{this}}</small>
-      {{/each}}
+      {{> eventLinks}}
+      <span class="event-languages">
+        {{#each language}}
+          <small class="text-mono event-language">{{this}}</small>
+        {{/each}}
+      </span>
     </div>
   </div>
 {{/if}}

@@ -81,7 +81,7 @@ body {
   font-family: 'Source Code Pro', Consolas, monospace;
 }
 
-.presentation-language {
+.event-language {
   &:after {
     margin-left: 5px;
     content: "/";
@@ -90,6 +90,11 @@ body {
     margin-left: 0;
     content: "";
   }
+}
+
+img[alt$=" "] {
+  display: block;
+  margin: auto;
 }
 
 #workshops > .panel:last-child {
@@ -107,8 +112,12 @@ body {
   margin: 0;
 }
 
-ol.workshop-times {
+ol.no-list-style, ul.no-list-style {
   list-style: none;
+}
+
+ol.no-list-indent, ul.no-list-indent {
+  padding: 0;
 }
 
 .margin-auto {

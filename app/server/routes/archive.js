@@ -2,6 +2,7 @@
 
 let _ = require("lodash");
 let Promise = require("bluebird");
+
 let event = require("../services/event");
 let Router = require("../services/Router");
 
@@ -16,6 +17,11 @@ exports.apiRouter = router.apiRouter;
 
 router.get("/", "archive", getArchiveData);
 router.get("/:year", "year", getYearData);
+router.router.get("/:year/assets/*", sendAssetsFile);
+router.apiRouter.get("/:year/assets/*", sendAssetsFile);
+router.router.get("/:year/poster/*", sendPosterFile);
+router.apiRouter.get("/:year/poster/*", sendPosterFile);
+router.get("/:year/*", "eventPage", getPageData);
 
 /*==================================================== Functions  ====================================================*/
 
@@ -46,8 +52,22 @@ function getYearData(req) {
           err.status = 404;
           throw err;
         }
-        return event
-            .readOne(year)
-            .then(function (data) { return _.assign({year: year}, event.localize(data, req.locale)); });
+        return event.readOne(year, req.locale);
       });
+}
+
+function getPageData(req) { return event.getPageData(req.params.year, req.locale, req.params[0]); }
+
+function sendAssetsFile(req, res, next) {
+  if (!req.params[0]) { return next(); }
+  event
+      .isPublic(req.params.year, req.params[0])
+      .then(function (file) { res.sendFile(file); }, _.ary(next, 0));
+}
+
+function sendPosterFile(req, res, next) {
+  if (!req.params[0]) { return next(); }
+  event
+      .isPoster(req.params.year, req.params[0])
+      .then(function (file) { res.sendFile(file); }, _.ary(next, 0));
 }

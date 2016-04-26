@@ -20,7 +20,23 @@
 
 <div class="tab-content well">
 
-  <div role="tabpanel" id="overview" class="tab-pane active">{{> overview}}</div>
+  <div role="tabpanel" id="overview" class="tab-pane active">
+    {{#if poster}}
+      <div class="media">
+        <div class="pull-right poster-container">
+          <div class="thumbnail">
+            <a href="{{relativeURL 'poster' poster.full}}">
+              <img class="media-object poster-preview" src="{{relativeURL 'poster' poster.small}}" alt="poster"/>
+            </a>
+            <div class="caption text-right">Copyright &copy; {{year}} Yvi</div>
+          </div>
+        </div>
+        <div class="text-justify text-large">{{{overview}}}</div>
+      </div>
+    {{else}}
+      <div class="text-justify text-large">{{{overview}}}</div>
+    {{/if}}
+  </div>
 
   <div role="tabpanel" id="presentations" class="tab-pane">
     <ol class="timeline">
@@ -67,7 +83,7 @@
       <div class="panel panel-info">
         <h4 class="panel-heading">{{{title}}}</h4>
         <div class="panel-body">
-          <ol class="workshop-times text-muted text-mono">
+          <ol class="no-list-style text-muted text-mono">
             {{#each times}}
               <li>
                 <i class="fa fa-fw fa-calendar"></i>

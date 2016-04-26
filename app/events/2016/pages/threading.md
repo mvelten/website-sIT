@@ -1,0 +1,1 @@
+![bored_with_the_internet ](http://imgs.xkcd.com/comics/bored_with_the_internet.jpg)

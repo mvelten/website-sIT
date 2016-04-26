@@ -20,10 +20,10 @@ function Router(router, apiRouter) {
 }
 
 _.each(["get", "post"], function (key) {
-  Router.prototype[key] = function (route, view, dataGenerator, errorHandler) {
+  Router.prototype[key] = function (route, view, dataGenerator) {
     if (typeof dataGenerator !== "function") { dataGenerator = _.constant(Promise.resolve({})); }
     this.router[key](route, function (req, res, next) {
-      dataGenerator(req, res).then(function (data) { res.render(view, data); }, next);
+      dataGenerator(req, res).then(function (data) { res.render(view, data); }, _.ary(next, 0));
     });
 
     if (DEBUG) {
@@ -35,7 +35,7 @@ _.each(["get", "post"], function (key) {
               if (isObject) { value = JSON.stringify(value, null, 2); }
               res.setHeader("Content-Type", contentType + ";charset=utf-8");
               res.send(value);
-            }, errorHandler ? _.partial(errorHandler, _, res, req) : next);
+            }, next);
       });
     } else {
       this.apiRouter[key](route, function (req, res, next) {
@@ -44,7 +44,7 @@ _.each(["get", "post"], function (key) {
               let contentType = value instanceof Object ? "application/json" : "text/plain";
               res.setHeader("Content-Type", contentType + ";charset=utf-8");
               res.send(value);
-            }, errorHandler ? _.partial(errorHandler, _, res, req) : next);
+            }, _.ary(next, 0));
       });
     }
   }

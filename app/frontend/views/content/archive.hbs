@@ -10,7 +10,24 @@
         </h2>
       </div>
       <div id="{{year}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{year}}">
-        <div class="panel-body">{{> overview}}</div>
+        <div class="panel-body">
+          {{#if poster}}
+            <div class="media">
+              <div class="pull-right poster-container">
+                <div class="thumbnail">
+                  <a href="{{relativeURL year 'poster' poster.full}}">
+                    <img class="media-object poster-preview" src="{{relativeURL year 'poster' poster.small}}"
+                         alt="poster"/>
+                  </a>
+                  <div class="caption text-right">Copyright &copy; {{year}} Yvi</div>
+                </div>
+              </div>
+              <div class="text-justify text-large">{{{overview}}}</div>
+            </div>
+          {{else}}
+            <div class="text-justify text-large">{{{overview}}}</div>
+          {{/if}}
+        </div>
         <div class="panel-footer"><a href="{{url 'archive' year}}">{{i18n 'archive.details'}}</a></div>
       </div>
     </div>

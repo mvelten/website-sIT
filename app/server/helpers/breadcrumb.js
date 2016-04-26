@@ -17,7 +17,12 @@ function createBreadcrumb(data) {
   let html = "";
   _.reduce(splitPath, function (result, value, idx) {
     let key = value || "home";
-    let content = locales.navigation.hasOwnProperty(key) ? root.__.call(root, "navigation." + key) : value;
+    let content;
+    if (locales.navigation.hasOwnProperty(key)) {
+      content = root.__.call(root, "navigation." + key);
+    } else {
+      content = value[0].toUpperCase() + value.substring(1);
+    }
     result += value;
     if (idx === _last) {
       html += "<li class=\"active\">" + content + "</li>";

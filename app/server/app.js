@@ -27,7 +27,6 @@ const ROUTES = {
   "/": [require("./routes/home"), require("./routes/legal")],
   "/upcoming": require("./routes/upcoming"),
   "/archive": require("./routes/archive"),
-  "/files": require("./routes/files"),
   "/location": require("./routes/location"),
   "/fonts": require("./routes/fonts"),
   "/scripts": scripts
@@ -51,7 +50,7 @@ i18n.configure({
 
 // view engine setup
 
-let hbs = ehbs.create({
+let hbs = ehbs.instance = ehbs.create({
   defaultLayout: "main",
   layoutsDir: path.join(VIEWS_PATH, "layouts"),
   partialsDir: path.join(VIEWS_PATH, "partials"),
@@ -61,6 +60,7 @@ let hbs = ehbs.create({
     headerItems: require("./helpers/headerItems"),
     i18n: require("./helpers/i18n"),
     localeURL: require("./helpers/localeURL"),
+    relativeURL: require("./helpers/relativeURL"),
     moment: require("./helpers/moment"),
     momentAdd: require("./helpers/momentAdd"),
     url: require("./helpers/url"),

@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+
+{{#if author}}
+  <ul class="no-list-style no-list-indent text-mono">
+    <li id="event-author">
+      <i class="fa fa-fw fa-user"></i> {{>author}}
+    </li>
+    <li id="event-language">
+      <i class="fa fa-fw fa-language"></i>
+      {{#each language}}
+        <small class="text-mono presentation-language">{{this}}</small>
+      {{/each}}
+    </li>
+  </ul>
+{{/if}}
+<ol class="no-list-style no-list-indent text-muted text-mono">
+  {{#each times}}
+    <li>
+      <i class="fa fa-fw fa-calendar"></i>
+      {{moment datetime format="dddd, L" input="YYYY/MM/DD hh:mm"}}
+      <i class="fa fa-fw fa-clock-o"></i>
+      {{moment datetime format="LT" input="YYYY/MM/DD hh:mm"}}
+      <i class="fa fa-fw fa-ellipsis-h"></i>
+      {{#if duration}}
+        {{momentAdd datetime duration format="LT" input="YYYY/MM/DD hh:mm" unit="minutes"}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ol>
