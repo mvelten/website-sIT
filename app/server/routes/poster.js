@@ -6,7 +6,7 @@ let fs = Promise.promisifyAll(require("fs"));
 let path = require("path");
 let express = require("express");
 
-const BASE_PATH = path.join(__dirname, "..", "..", "presentations");
+const BASE_PATH = path.join(__dirname, "..", "..", "events");
 
 let router = express.Router();
 

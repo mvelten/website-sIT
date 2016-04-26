@@ -7,7 +7,7 @@ let path = require("path");
 
 let author = require("./author");
 
-const BASE_PATH = path.join(__dirname, "..", "..", "presentations");
+const BASE_PATH = path.join(__dirname, "..", "..", "events");
 
 /*===================================================== Exports  =====================================================*/
 
