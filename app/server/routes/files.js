@@ -17,12 +17,13 @@ exports.apiRouter = router;
 
 /*------------------------------------------------------ Routes ------------------------------------------------------*/
 
-router.get("/:year/:file", sendPoster);
+router.get("/:year/*", sendFile);
 
 /*==================================================== Functions  ====================================================*/
 
-function sendPoster(req, res, next) {
-  let file = path.join(BASE_PATH, req.params.year, "poster", req.params.file);
+function sendFile(req, res, next) {
+  if (!req.params[0]) { return next(); }
+  let file = path.join(BASE_PATH, req.params.year, "public", req.params[0]);
   fs
       .accessAsync(file, fs.R_OK)
       .then(function () { res.sendFile(file); }, _.ary(next, 0));

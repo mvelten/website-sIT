@@ -35,7 +35,7 @@ function readOne(year) {
 }
 
 function checkPoster(year) {
-  return fs.accessAsync(path.join(BASE_PATH, year, "poster"), fs.R_OK).thenReturn(true).catchReturn(false);
+  return fs.accessAsync(path.join(BASE_PATH, year, "public", "poster"), fs.R_OK).thenReturn(true).catchReturn(false);
 }
 
 function readOverview(year) {
