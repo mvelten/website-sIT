@@ -1,156 +1,192 @@
 {
   "begruessung": {
-    "title": "Begr&uuml;&szlig;ung",
-    "short": {"en": "Welcome", "de": "Willkommen zur sIT 2016"},
-    "details": {},
     "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Begr&uuml;&szlig;ung",
+        "short": "Willkommen zu den sIT 2016"
+      },
+      "en": {
+        "title": "Welcoming",
+        "short": "Welcome to the sIT 2016"
+      }
+    },
     "duration": 15,
     "icon": "commenting",
     "color": "success",
     "author": "Fachgruppe Informatik"
   },
   "deriva": {
-    "title": "Deriva",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "title": "Deriva",
     "duration": 45,
     "author": null,
     "company": "Deriva"
   },
   "hosteurope": {
-    "title": "Host Europe",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "title": "Host Europe",
     "duration": 45,
     "author": "Malte von dem Haagen",
     "company": "Host Europe"
   },
   "aicon": {
-    "title": "Aicon",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "title": "Aicon",
     "duration": 30,
     "author": null,
     "company": "Aicon (http://aicon3d.de/)"
   },
   "murderer-js": {
-    "title": "murderer.js",
-    "short": {
-      "en": "Insights into a social interaction game backed by a node.js webserver.",
-      "de": "Einsichten in ein Sozialinteraktionsspiel mit Unterst&uuml;tzung eines node.js Webservers."
-    },
-    "details": {
-      "en": "murderer.js is a hybrid game that connects real interaction with a web-service.<br/>The project began during the O-Phase 2015 and continued as a neat hobby of mine. A live demo including the rules can be viewed at <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a>. The source code is publicly available on <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a>.<br/>The presentation will consist of an introduction into the game concept and various aspects of the development process.<br/>To demonstrate the fun of the game, we will start a round that will accompany the remaining progress of the sIT2016.",
-      "de": "Bei murderer.js handelt es sich um ein hybrides Spiel das reale Interaktion mit einem Web-Service kombiniert.<br/>Das Projekt ist im Laufe der O-Phase 2015 entstanden und hat sich seither zu einem netten Hobby entwickelt. Eine live-version samt Regelwerk kann unter <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a> eingesehen werden. Der Source-Code ist auf <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a> &ouml;ffentlich zug&auml;nglich.<br/>Es wird eine Einf&uuml;hrung in das Spielkonzept, sowie die Entwicklung des Webservers gegeben.<br/>Um den Spielspa&szlig; zu demonstrieren, wird auch eine Spielrunde den folgenden Verlauf der sIT2016 begleiten."
-    },
     "language": ["de", "en"],
+    "title": "murderer.js",
+    "translate": {
+      "de": {
+        "short": "Einsichten in ein Sozialinteraktionsspiel mit Unterst&uuml;tzung eines node.js Webservers.",
+        "details": "Bei murderer.js handelt es sich um ein hybrides Spiel das reale Interaktion mit einem Web-Service kombiniert.<br/>Das Projekt ist im Laufe der O-Phase 2015 entstanden und hat sich seither zu einem netten Hobby entwickelt. Eine live-version samt Regelwerk kann unter <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a> eingesehen werden. Der Source-Code ist auf <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a> &ouml;ffentlich zug&auml;nglich.<br/>Es wird eine Einf&uuml;hrung in das Spielkonzept, sowie die Entwicklung des Webservers gegeben.<br/>Um den Spielspa&szlig; zu demonstrieren, wird auch eine Spielrunde den folgenden Verlauf der sIT2016 begleiten."
+      },
+      "en": {
+        "short": "Insights into a social interaction game backed by a node.js webserver.",
+        "details": "murderer.js is a hybrid game that connects real interaction with a web-service.<br/>The project began during the O-Phase 2015 and continued as a neat hobby of mine. A live demo including the rules can be viewed at <a href=\"https://www.frissdiegurke.com\">https://www.frissdiegurke.com</a>. The source code is publicly available on <a href=\"https://github.com/frissdiegurke/murderer.js\">Github</a>.<br/>The presentation will consist of an introduction into the game concept and various aspects of the development process.<br/>To demonstrate the fun of the game, we will start a round that will accompany the remaining progress of the sIT2016."
+      }
+    },
     "duration": 50,
     "author": "Ole Reglitzki (https://github.com/frissdiegurke)"
   },
   "onlinewahlen": {
-    "title": "Onlinewahlen",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Onlinewahlen"
+      },
+      "en": {
+        "title": "Online voting"
+      }
+    },
     "duration": 30,
     "author": "Moritz Strube",
     "company": "Polyas (https://www.polyas.de/)"
   },
   "robin": {
-    "title": "TBA",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "title": "TBA",
     "duration": 50,
     "author": "Robin",
     "company": "Google (https://www.google.com)"
   },
   "matze": {
-    "title": "TBA",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "title": "TBA",
     "duration": 50,
     "author": "Matthias Velten",
     "company": "FlaviaIT (http://www.flavia-it.de/)"
   },
   "contest": {
-    "title": "Programming Challenge Contests",
-    "short": {},
-    "details": {},
     "language": ["en", "de"],
+    "translate": {
+      "de": {
+        "title": "Einf&uuml;hrung in Programmier-Wettbewerbe"
+      },
+      "en": {
+        "title": "Introduction to Programming Contests"
+      }
+    },
     "duration": 50,
     "author": "Bakhodir"
   },
   "raspiadc": {
-    "title": "Raspberry Pi und ADC",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Raspberry Pi und ADC"
+      },
+      "en": {
+        "title": "Raspberry Pi and ADC"
+      }
+    },
     "duration": 50,
     "author": "Sebastian Gro&szlig;"
   },
   "secret": {
-    "title": "Secret presentation",
-    "short": {},
-    "details": {},
     "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "&Uuml;berraschungsvortrag"
+      },
+      "en": {
+        "title": "Surprise presentation"
+      }
+    },
     "icon": "user-secret",
     "color": "primary",
     "duration": 42,
     "author": null
   },
   "social": {
-    "title": "Social Events",
-    "short": {
-      "en": "powerpoint-karaoke, BBQ, key-signing and more", "de": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"
-    },
-    "details": {},
     "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Sozialereignisse",
+        "short": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"
+      },
+      "en": {
+        "title": "Social Events",
+        "short": "Powerpoint karaoke, BBQ, key-signing and more"
+      }
+    },
     "icon": "cutlery",
     "color": "success"
   },
   "threading-introduction": {
-    "title": "Vorstellung des Threading Workshops",
-    "short": {},
-    "details": {},
-    "language": ["de"],
+    "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Vorstellung des Threading Workshops"
+      },
+      "en": {
+        "title": "Introduction of the Threading Workshop"
+      }
+    },
     "icon": "briefcase",
     "duration": 30,
     "author": "Lisa Wolf"
   },
   "joepardy": {
-    "title": "Joepardy",
-    "short": {},
-    "details": {},
     "language": ["de"],
+    "title": "Joepardy",
     "icon": "gamepad",
     "color": "warning",
     "duration": 45,
     "author": "Stefan Siemer"
   },
   "results": {
-    "title": "Threading results",
-    "short": {
-      "en": "Come and see the results of our threading workshop",
-      "de": "Komm und betrachte die Erfolge unseres Threading-Workshops"
-    },
-    "details": {},
     "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Ergebnisse des Threading Workshops",
+        "short": "Komm und betrachte die Erfolge unseres Threading Workshops"
+      },
+      "en": {
+        "title": "Results of the Threading Workshop",
+        "short": "Come and see the results of our threading workshop"
+      }
+    },
     "icon": "eye",
-    "duration": 30,
+    "duration": 60,
     "author": "Lisa Wolf"
   },
   "challenge": {
-    "title": "Programming Challenge of sIT16",
-    "short": {},
-    "details": {
-      "en": "Take part at the programming challenge! ...", "de": "Nimm an unserer Programmier Challenge teil! ..."
-    },
     "language": ["en"],
+    "translate": {
+      "de": {
+        "title": "Programmier-Wettbewerb der sIT16",
+        "short": "Nimm an unserer Programmier Challenge teil!"
+      },
+      "en": {
+        "title": "Programming Challenge of sIT16",
+        "short": "Take part at the programming challenge!"
+      }
+    },
     "icon": "trophy",
     "color": "danger",
     "duration": null,

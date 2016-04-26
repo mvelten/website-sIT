@@ -1,17 +1,15 @@
 {
   "workshops": [
     {
+      "language": ["de", "en"],
       "title": "Threading Workshop",
+      "short": "H&auml;keln lernen für Einsteiger.<br/>Es werden die Grundlagen des H&auml;kelns erl&auml;utert, sodass eigene Werke mit Nadel und Faden erschaffen werden k&ouml;nnen. Die traditionelle Art von Threads.<br/>Ob Maskottchen, Handysocken, Stulpen oder USB-Sticksocken, hier kann sich jeder ein pers&ouml;nliches H&auml;kelwerk erschaffen.",
       "times": [
         {
           "datetime": "2016/05/21 14:00",
           "duration": null
         }
       ],
-      "short": {
-        "de": "Häkeln lernen für Einsteiger.<br/>Es werden die Grundlagen des Häkelns erläutert, sodass eigene Werke mit Nadel und Faden erschaffen werden können. Die traditionelle Art von Threads.<br/>Ob Maskottchen, Handysocken, Stulpen oder USB-Sticksocken, hier kann sich jeder ein pers&ouml;nliches Häkelwerk erschaffen."
-      },
-      "language": ["de"],
       "author": "Lisa Wolf"
     }
   ]

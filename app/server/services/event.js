@@ -92,10 +92,8 @@ function localize(obj, locale) {
 }
 
 function localizeEvent(event, locale) {
-  if (event.hasOwnProperty("short")) {
-    event.short = event.short[event.short.hasOwnProperty(locale) ? locale : event.language[0]];
-  }
-  if (event.hasOwnProperty("details")) {
-    event.details = event.details[event.details.hasOwnProperty(locale) ? locale : event.language[0]];
+  if (event.hasOwnProperty("translate")) {
+    if (event.translate.hasOwnProperty(locale)) { _.assign(event, event.translate[locale]); }
+    delete event.translate;
   }
 }
