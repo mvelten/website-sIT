@@ -88,15 +88,8 @@
     "company": "FlaviaIT (http://www.flavia-it.de/)"
   },
   "contest": {
-    "language": ["en", "de"],
-    "translate": {
-      "de": {
-        "title": "Einf&uuml;hrung in Programmier-Wettbewerbe"
-      },
-      "en": {
-        "title": "Introduction to Programming Contests"
-      }
-    },
+    "language": ["en"],
+    "title": "Introduction to Programming Contests",
     "duration": 50,
     "author": "Bakhodir Ashirmatov"
   },
@@ -183,16 +176,8 @@
   },
   "challenge": {
     "language": ["en"],
-    "translate": {
-      "de": {
-        "title": "Programmier-Wettbewerb der sIT16",
-        "short": "Nimm an unserer Programmier Challenge teil!"
-      },
-      "en": {
-        "title": "Programming Challenge of sIT16",
-        "short": "Take part at the programming challenge!"
-      }
-    },
+    "title": "Programming Challenge of sIT16",
+    "short": "Take part at the programming challenge!",
     "icon": "trophy",
     "color": "danger",
     "duration": null,

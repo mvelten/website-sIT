@@ -12,7 +12,10 @@ services:
 env:
   - REP=frissdiegurke/sit
 
-script: cd app && npm test
+script:
+  - cd app
+  - npm test
+  - cd ..
 
 before_deploy:
   - TAG=`git rev-parse --short HEAD`
