@@ -28,7 +28,7 @@
     "title": "Host Europe",
     "duration": 45,
     "author": "Malte von dem Haagen",
-    "company": "Host Europe"
+    "company": "Host Europe (https://www.hosteurope.de/)"
   },
   "aicon": {
     "language": ["de", "en"],
@@ -71,11 +71,18 @@
     "language": ["de", "en"],
     "title": "TBA",
     "duration": 50,
-    "author": "Robin"
+    "author": "Robin Martinjak"
   },
   "matze": {
     "language": ["de", "en"],
-    "title": "TBA",
+    "translate": {
+      "de": {
+        "title": "Introduction systemd"
+      },
+      "en": {
+        "title": "Enf&uuml;hrung systemd"
+      }
+    },
     "duration": 50,
     "author": "Matthias Velten",
     "company": "FlaviaIT (http://www.flavia-it.de/)"
@@ -91,7 +98,7 @@
       }
     },
     "duration": 50,
-    "author": "Bakhodir"
+    "author": "Bakhodir Ashirmatov"
   },
   "raspiadc": {
     "language": ["de", "en"],
@@ -189,6 +196,6 @@
     "icon": "trophy",
     "color": "danger",
     "duration": null,
-    "author": "Bakhodir"
+    "author": "Bakhodir Ashirmatov"
   }
 }

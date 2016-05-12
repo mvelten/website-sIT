@@ -1,0 +1,16 @@
+sudo: required
+
+language: javascript
+
+services:
+  - docker
+
+before_install:
+  - REP=frissdiegurke/sit
+  - TAG=`git rev-parse --short=16 HEAD`
+  - docker build -t ${REP}:${TAG} .
+  - docker tag ${REP}:${TAG} ${REP}:latest
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push ${REP}:${TAG}
+  - docker push ${REP}:latest
+
