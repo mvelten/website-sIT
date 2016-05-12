@@ -1,6 +1,10 @@
 sudo: required
 
-language: javascript
+language: node_js
+
+node_js:
+  - "5"
+  - "5.1"
 
 services:
   - docker
@@ -9,8 +13,7 @@ env:
   - REP=frissdiegurke/sit
   - TAG=`git rev-parse --short HEAD`
 
-script:
-  - $(cd app; npm test)
+script: $(cd app && npm test)
 
 before_deploy:
   - docker build -t ${REP}:${TAG} .
