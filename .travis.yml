@@ -5,13 +5,19 @@ language: javascript
 services:
   - docker
 
-before_install:
+env:
   - REP=frissdiegurke/sit
-  - TAG=`git rev-parse --short=16 HEAD`
+  - TAG=`git rev-parse --short HEAD`
+
+script:
+  - $(cd app; npm test)
+
+before_deploy:
   - docker build -t ${REP}:${TAG} .
   - docker tag ${REP}:${TAG} ${REP}:latest
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+deploy:
   - docker push ${REP}:${TAG}
   - docker push ${REP}:latest
-
 
