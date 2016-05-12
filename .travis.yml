@@ -10,11 +10,12 @@ services:
   - docker
 
 env:
-  - REP=frissdiegurke/sit TAG=`git rev-parse --short HEAD`
+  - REP=frissdiegurke/sit
 
-script: $(cd app && npm test)
+script: cd app && npm test
 
 before_deploy:
+  - TAG=`git rev-parse --short HEAD`
   - docker build -t ${REP}:${TAG} .
   - docker tag ${REP}:${TAG} ${REP}:latest
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
