@@ -84,8 +84,7 @@
       }
     },
     "duration": 50,
-    "author": "Matthias Velten",
-    "company": "FlaviaIT (http://www.flavia-it.de/)"
+    "author": "Matthias Velten"
   },
   "contest": {
     "language": ["en"],
@@ -97,10 +96,14 @@
     "language": ["de", "en"],
     "translate": {
       "de": {
-        "title": "Raspberry Pi und ADC"
+        "title": "Raspberry Pi und ADC",
+        "short": "In diesem Vortrag gehts es darum Signale aus der analogen Welt zu erfassen mit einem Raspberry Pi zu erfassen.",
+        "details": "Der Raspberry Pi ist ein kleiner Einplatinencomputer basierend auf einem Chipsatz von Broadcom und einem ARM-Prozessor. Mit einem entsprechenden Betriebssystem kann er verwendet werden wie jeder andere PC auch - zum Surfen im Web, zum Video gucken, Musik hoeren oder zum Editieren von Text oder Programmen. Dabei helfen auch Anschluesse fuer Peripherie Komponenten wie etwa USB, HDMI oder eine RJ45-Buchse fuer Ethernet. Dies alles zu einem geringen Energieaufwand von rund fuenf Watt. Was ihn darueber hinaus jedoch interessant macht sind die zusaetzlichen Anschluesse, die er bereit stellt. Je nach Ausfuehrung sind dies bis zu 40 GPIO - ``Fuer jeden Zweck Eingabe/ Ausgabe`` - Stiftleisten. Diese verarbeiten digitale Signale und koennen mit den entsprechenden Treibern fuer Kommunikation ueber spezielle Protokolle - wie zB. I2C oder SPI - mit anderen Mikroprozessorsystemen verwendet werden. Was der starke Raspberry Pi jedoch nicht verfuegt ist die Moeglichkeit Signale aus der analogen Welt zu erfassen - wie etwa die Stellung eines angeschlossenen Potentiometers oder die Messwerte angeschlossener Sensoren. Wie hierfuer mit wenigen und einfachen Mitteln Abhilfe zu schaffen ist, darueber soll es in diesem Votrag gehen."
       },
       "en": {
-        "title": "Raspberry Pi and ADC"
+        "title": "Raspberry Pi and ADC",
+        "short": "The talk is about capturing signals from the surrounding analog world with a Raspberry Pi.",
+        "details": "The Raspberry Pi is a small computer based on one platine that has a broadcom chipset and is equipped with an ARM-Processor. Given the right operating system it can be used like any other personal computer - to browse the web, watch videos, listen to music or edit text or code. To achieve this peripheral components can be connected via USB, HDMI or via ethernet over an RJ45 socket. This for a total energy intake of five watts. But the most special thing about the Raspberry Pi are the additional pins it's providing. Namely up to 40 GPIO - ``General Purpose Input/ Output`` - Pins. They work with digital signals and using appropriate drivers for communication via special protocols - such as I2C or SPI - they are able to communicate with other microprocessor based systems. A thing the strong Raspberry Pi is missing though is the ability to capture signals from the surrounding analog world - such as the state of a connected potentiometer or other sensors. How to achieve this by few and easy means is what this talk is about."
       }
     },
     "duration": 50,
@@ -157,6 +160,13 @@
     "color": "warning",
     "duration": 45,
     "author": "Stefan Siemer"
+  },
+  "karaoke": {
+    "language": ["de"],
+    "title": "Powerpoint-Karaoke",
+    "icon": "gamepad",
+    "duration": 42,
+    "author": null
   },
   "results": {
     "language": ["de", "en"],
