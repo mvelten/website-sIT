@@ -32,10 +32,11 @@
   },
   "aicon": {
     "language": ["de", "en"],
-    "title": "Aicon",
+    "title": "AICON",
+    "details": "Efficient and high-precision production monitoring, quality control, inspection and reliable reverse engineering are absolutely essential to be competitive in a global market. In the field of measuring technology and beyond, optical and portable non-contact 3D measuring systems become more and more important. AICON 3D systems offers optimized solutions around industrial inspection and digitizing tasks to keep the quality of products always at the maximum level.",
     "duration": 30,
     "author": null,
-    "company": "Aicon (http://aicon3d.de/)"
+    "company": "AICON (http://aicon3d.de/)"
   },
   "murderer-js": {
     "language": ["de", "en"],
