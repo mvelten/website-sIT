@@ -121,19 +121,18 @@
     },
     "icon": "user-secret",
     "color": "primary",
-    "duration": 42,
-    "author": null
+    "duration": 42
   },
   "social": {
     "language": ["de", "en"],
     "translate": {
       "de": {
         "title": "Sozialereignisse",
-        "short": "Powerpoint-Karaoke, Grillen, Key-signing und mehr"
+        "short": "Grillen, Key-signing und mehr"
       },
       "en": {
         "title": "Social Events",
-        "short": "Powerpoint karaoke, BBQ, key-signing and more"
+        "short": "BBQ, key-signing and more"
       }
     },
     "icon": "cutlery",
@@ -162,11 +161,10 @@
     "author": "Stefan Siemer"
   },
   "karaoke": {
-    "language": ["de"],
+    "language": ["de", "en"],
     "title": "Powerpoint-Karaoke",
-    "icon": "gamepad",
-    "duration": 42,
-    "author": null
+    "color": "warning",
+    "duration": 42
   },
   "results": {
     "language": ["de", "en"],
