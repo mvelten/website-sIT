@@ -1,0 +1,19 @@
+{
+  "greeting": {
+    "language": ["de", "en"],
+    "translate": {
+      "de": {
+        "title": "Begr&uuml;&szlig;ung",
+        "short": "Willkommen zu den sIT 20XX"
+      },
+      "en": {
+        "title": "Greeting",
+        "short": "Welcome to the sIT 20XX"
+      }
+    },
+    "duration": 15,
+    "icon": "commenting",
+    "color": "success",
+    "author": "Fachgruppe Informatik"
+  }
+}

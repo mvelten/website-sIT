@@ -1,0 +1,16 @@
+{
+  "workshops": [
+    {
+      "language": ["de", "en"],
+      "title": "",
+      "short": "",
+      "times": [
+        {
+          "datetime": "20XX/05/XX XX:XX",
+          "duration": null
+        }
+      ],
+      "author": ""
+    }
+  ]
+}
