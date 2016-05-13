@@ -77,10 +77,10 @@
     "language": ["de", "en"],
     "translate": {
       "de": {
-        "title": "Introduction systemd"
+        "title": "Enf&uuml;hrung systemd"
       },
       "en": {
-        "title": "Enf&uuml;hrung systemd"
+        "title": "Introduction systemd"
       }
     },
     "duration": 50,
