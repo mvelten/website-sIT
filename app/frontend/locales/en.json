@@ -22,7 +22,7 @@
   },
   "behalfOf": "on behalf of",
   "event": {
-    "more": "show more",
-    "less": "show less"
+    "more": "show&nbsp;more",
+    "less": "show&nbsp;less"
   }
 }

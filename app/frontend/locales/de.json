@@ -22,7 +22,7 @@
   },
   "behalfOf": "im Auftrag von",
   "event": {
-    "more": "Details zeigen",
-    "less": "Details verbergen"
+    "more": "Details&nbsp;zeigen",
+    "less": "Details&nbsp;verbergen"
   }
 }

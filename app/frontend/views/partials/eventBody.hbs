@@ -1,9 +1,7 @@
 {{{short}}}
 {{#if details}}
-  <div>
-    <div class="collapse" id="details-{{#if key}}{{key}}{{else}}{{@key}}{{/if}}">{{{details}}}</div>
-    <a href="#details-{{#if key}}{{key}}{{else}}{{@key}}{{/if}}" class="show-toggle" role="link" data-toggle="collapse"
-       aria-expanded="false" aria-controls="details-{{#if key}}{{key}}{{else}}{{@key}}{{/if}}"
-       data-more="{{{i18n 'event.more'}}}" data-less="{{{i18n 'event.less'}}}">{{{i18n 'event.more'}}}</a>
-  </div>
+  <span class="event-details collapse" id="details-{{#if key}}{{key}}{{else}}{{@key}}{{/if}}">{{{details}}}</span>
+  <a href="#details-{{#if key}}{{key}}{{else}}{{@key}}{{/if}}" class="show-toggle" role="link" data-toggle="collapse"
+      aria-expanded="false" aria-controls="details-{{#if key}}{{key}}{{else}}{{@key}}{{/if}}"
+      data-more="{{{i18n 'event.more'}}}" data-less="{{{i18n 'event.less'}}}">{{{i18n 'event.more'}}}</a>
 {{/if}}
