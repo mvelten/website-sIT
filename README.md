@@ -29,7 +29,7 @@ Within the presentations.json the key of an entry is considered its ID. The entr
   "icon": String, // Optional; font-awesome icon name to use; default: "comment"
   "color": String, // Optional; bootstrap standard type to use for icon background; default: "info"
   "page": String, // Optional; ID of custom page to refer to (see below)
-  "assets": [
+  "assets": [ // Optional
     "file": String, // file-name (see below)
     "icon": String // font-awesome icon name
   ],
@@ -64,11 +64,11 @@ Within the workshops.json you may define workshops as following:
       "author": String|Object, // Optional; Details of the speaker
       "company": String|Object, // Optional; Details of the company the speaker represents
       "page": String, // Optional; ID of custom page to refer to (see below)
-      "assets": [
+      "assets": [ // Optional
         "file": String, // file-name (see below)
         "icon": String // font-awesome icon name
       ],
-      "times": [ // It is recommended to add an entry for each day and use multiple entries per day if the pauses are known
+      "times": [ // Optional; It is recommended to add an entry for each day and use multiple entries per day if the pauses are known
         {
           "datetime": "YYYY/MM/DD HH:mm", // Start time of the workshop
           "duration": Number // Optional; Estimated workshop duration in minutes
