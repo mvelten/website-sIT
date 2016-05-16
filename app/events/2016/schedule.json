@@ -2,7 +2,7 @@
   "2016/05/20": [
     {"time": "15:00", "presentation": "begruessung"},
     {"time": "15:15", "presentation": "onlinewahlen"},
-    {"time": "16:00", "presentation": "deriva"},
+    {"time": "16:15", "presentation": "deriva"},
     {"time": "17:00", "presentation": "hosteurope"},
     {"time": "18:00", "presentation": "aicon"},
     {"time": "18:45", "presentation": "threading-introduction"},

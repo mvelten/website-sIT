@@ -19,7 +19,7 @@
   "deriva": {
     "language": ["de", "en"],
     "title": "Deriva",
-    "duration": 45,
+    "duration": 40,
     "author": null,
     "company": "Deriva"
   },
@@ -65,7 +65,7 @@
         "title": "Online voting"
       }
     },
-    "duration": 30,
+    "duration": 40,
     "author": "Moritz Strube",
     "company": "Polyas (https://www.polyas.de/)"
   },
