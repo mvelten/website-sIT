@@ -140,6 +140,17 @@ ol.no-list-indent, ul.no-list-indent {
   margin-bottom: @padding-large-vertical;
 }
 
+
+@media print {
+  .breadcrumb, .footer {
+    display: none;
+  }
+
+  body {
+    padding-top: 0;
+  }
+}
+
 @fonts-path: "/fonts";
 @fa-font-path: @fonts-path;
 

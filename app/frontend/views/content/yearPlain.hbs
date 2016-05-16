@@ -1,0 +1,71 @@
+<h1>sIT {{year}}</h1>
+
+<h2>{{{i18n 'year.presentations'}}}</h2>
+
+{{#each schedule}}
+  <h3>{{moment date format="dddd, L" input="YYYY/MM/DD"}}</h3>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="col-xs-2 col-sm-3 col-lg-2">{{i18n 'schedule.time'}}</th>
+      <th class="col-xs-5 col-lg-7">{{i18n 'schedule.title'}}</th>
+      <th class="col-xs-3 col-lg-2">{{i18n 'schedule.author'}}</th>
+      <th class="col-xs-2 col-sm-1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each list}}
+      {{#withLookup ../../presentations presentation}}
+        <tr>
+          <td class="text-muted text-mono">
+            {{moment ../time format="LT" input="hh:mm"}}
+            <i class="fa fa-fw fa-ellipsis-h"></i>
+            {{#if duration}}
+              {{momentAdd ../time duration format="LT" input="hh:mm" unit="minutes"}}
+            {{/if}}
+          </td>
+          <td>{{{title}}}</td>
+          <td>
+            {{#if hasFooter}}{{#if author.name}}{{{author.name}}}{{else}}<em>{{i18n 'noAuthor.text'}}</em>{{/if}}{{/if}}
+          </td>
+          <td class="text-right">
+            {{#if company}}<i class="fa fa-fw fa-building-o"></i>{{/if}}
+            <i class="fa fa-fw fa-{{#if icon}}{{icon}}{{else}}comment{{/if}}"></i>
+          </td>
+        </tr>
+      {{/withLookup}}
+    {{/each}}
+    </tbody>
+  </table>
+{{/each}}
+
+<h2>{{{i18n 'year.workshops'}}}</h2>
+
+{{#each workshops}}
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      {{{title}}}
+      <span class="pull-right">
+        {{#if hasFooter}}{{#if author.name}}{{{author.name}}}{{else}}<em>{{i18n 'noAuthor.text'}}</em>{{/if}}{{/if}}
+      </span>
+    </div>
+    <div class="panel-body">
+      <ol class="no-list-style text-muted text-mono">
+        {{#each times}}
+          <li>
+            <i class="fa fa-fw fa-calendar"></i>
+            {{moment datetime format="dddd, L" input="YYYY/MM/DD hh:mm"}}
+            <i class="fa fa-fw fa-clock-o"></i>
+            {{moment datetime format="LT" input="YYYY/MM/DD hh:mm"}}
+            <i class="fa fa-fw fa-ellipsis-h"></i>
+            {{#if duration}}
+              {{momentAdd datetime duration format="LT" input="YYYY/MM/DD hh:mm" unit="minutes"}}
+            {{/if}}
+          </li>
+        {{/each}}
+      </ol>
+      {{> eventBody}}
+    </div>
+  </div>
+{{/each}}

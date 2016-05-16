@@ -16,6 +16,11 @@
     "presentations": "Presentations",
     "workshops": "Workshops"
   },
+  "schedule": {
+    "time": "Time",
+    "title": "Title",
+    "author": "Speaker"
+  },
   "noAuthor": {
     "text": "TBA",
     "title": "To be announced. The speaker is not known yet."

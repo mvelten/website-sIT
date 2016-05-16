@@ -17,6 +17,7 @@ exports.apiRouter = router.apiRouter;
 
 router.get("/", "archive", getArchiveData);
 router.get("/:year", "year", getYearData);
+router.get("/:year/plain", "yearPlain", getYearData);
 router.router.get("/:year/assets/*", sendAssetsFile);
 router.apiRouter.get("/:year/assets/*", sendAssetsFile);
 router.router.get("/:year/poster/*", sendPosterFile);
