@@ -79,14 +79,17 @@
     "language": ["de", "en"],
     "translate": {
       "de": {
-        "title": "Enf&uuml;hrung systemd"
+        "title": "Systemd - Fluch oder Segen?",
+	"short": "Eine Einf&uuml;hrung in Systemd mit anschlie&szlig;ender Diskussion.",
+	"details": "Systemd startete als eine Modernisierung des System V Init Systems und übernahm im Laufe seiner Entwicklung immer mehr Funktionalit&auml;ten. Diese Tatsache ist nicht unumstritten und daher soll der Vortrag einen &Uuml;berblick über die grundlegenden Funktionen von Systemd geben und in einer Diskussionsrunde Vor- und Nachteile gegeneinander abgew&auml;gt werden."
       },
       "en": {
-        "title": "Introduction systemd"
+        "title": "Systemd - boon or bane?",
+	"short": "An introduction to Systemd with discussion."
       }
     },
     "duration": 50,
-    "author": "Matthias Velten"
+    "author": "Mathias Velten"
   },
   "contest": {
     "language": ["en"],
