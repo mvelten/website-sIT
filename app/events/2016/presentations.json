@@ -20,7 +20,7 @@
     "language": ["de", "en"],
     "title": "Deriva",
     "duration": 40,
-    "author": null,
+    "author": "Christian Schröder",
     "company": "Deriva"
   },
   "hosteurope": {
@@ -36,7 +36,7 @@
     "short": "Efficient and high-precision production monitoring, quality control, inspection and reliable reverse engineering are absolutely essential to be competitive in a global market.",
     "details": "In the field of measuring technology and beyond, optical and portable non-contact 3D measuring systems become more and more important. AICON 3D systems offers optimized solutions around industrial inspection and digitizing tasks to keep the quality of products always at the maximum level.",
     "duration": 30,
-    "author": null,
+    "author": "Werner Bösemann",
     "company": "AICON (http://aicon3d.de/)"
   },
   "murderer-js": {
